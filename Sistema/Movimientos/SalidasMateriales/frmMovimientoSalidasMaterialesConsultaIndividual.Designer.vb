@@ -58,12 +58,12 @@ Partial Class frmMovimientoSalidasMaterialesConsultaIndividual
         Me.txtIdEmpleado = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtCalle = New System.Windows.Forms.TextBox()
         Me.txtTotalCasas = New System.Windows.Forms.TextBox()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.txtIdCalle = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.txtCalle = New System.Windows.Forms.TextBox()
         Me.panelBotones.SuspendLayout()
         Me.panelDataGrid.SuspendLayout()
         CType(Me.dgComprasMaterialesConsulta, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -375,6 +375,15 @@ Partial Class frmMovimientoSalidasMaterialesConsultaIndividual
         Me.Panel1.Size = New System.Drawing.Size(598, 42)
         Me.Panel1.TabIndex = 37
         '
+        'txtCalle
+        '
+        Me.txtCalle.Location = New System.Drawing.Point(65, 7)
+        Me.txtCalle.Name = "txtCalle"
+        Me.txtCalle.ReadOnly = True
+        Me.txtCalle.Size = New System.Drawing.Size(136, 20)
+        Me.txtCalle.TabIndex = 12
+        Me.txtCalle.TabStop = False
+        '
         'txtTotalCasas
         '
         Me.txtTotalCasas.Location = New System.Drawing.Point(444, 7)
@@ -420,15 +429,6 @@ Partial Class frmMovimientoSalidasMaterialesConsultaIndividual
         Me.Label8.TabIndex = 9
         Me.Label8.Text = "Calle:"
         '
-        'txtCalle
-        '
-        Me.txtCalle.Location = New System.Drawing.Point(65, 7)
-        Me.txtCalle.Name = "txtCalle"
-        Me.txtCalle.ReadOnly = True
-        Me.txtCalle.Size = New System.Drawing.Size(136, 20)
-        Me.txtCalle.TabIndex = 12
-        Me.txtCalle.TabStop = False
-        '
         'frmMovimientoSalidasMaterialesConsultaIndividual
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -440,6 +440,7 @@ Partial Class frmMovimientoSalidasMaterialesConsultaIndividual
         Me.Controls.Add(Me.panelOrden)
         Me.Controls.Add(Me.panelProveedor)
         Me.Name = "frmMovimientoSalidasMaterialesConsultaIndividual"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Salidas Materiales - Consulta Individual"
         Me.panelBotones.ResumeLayout(False)
         Me.panelDataGrid.ResumeLayout(False)

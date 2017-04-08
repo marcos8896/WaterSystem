@@ -2,7 +2,7 @@
 
 Public Class txtBuscarEmpleado
     '--------------------DECLARACIÓN DE VARIABLES GLOBALES DE LA CLASE--------------------------!
-    Dim conexionsql As New SqlConnection("Data Source='MARCOS-LAPTOP\PLEASEWORK'; Initial Catalog='db_agua_potable'; Integrated security=true")
+    Dim conexionsql As New SqlConnection(stringConnection())
     Dim comando As SqlCommand = conexionsql.CreateCommand()
     Dim lector As SqlDataReader
 
@@ -13,9 +13,7 @@ Public Class txtBuscarEmpleado
         FillCombitoSituacion(combitoSituacion)
         FillCombitoTarifa(combitoIdTarifa)
 
-        combitoMesInicial.SelectedIndex = 0
-        combitoMesFinal.SelectedIndex = 0
-        txtFechaSO.Text = Date.Today.Date.ToShortDateString
+        cleanTextBoxsAndDataGrids()
 
         rbAgua.Select()
 
@@ -131,15 +129,15 @@ Public Class txtBuscarEmpleado
     End Sub
 
     '--------------------KEYPRESS'--------------------------!
-    Private Sub txtNombreCliente_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtBuscarCuenta.KeyPress
+    Private Sub txtBuscarCuenta_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarCuenta.TextChanged
         FillDataGridCuentas()
     End Sub
 
-    Private Sub txtNombreEmpleado_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtBuscarEmployee.KeyPress
+    Private Sub txtNombreEmpleado_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarEmployee.TextChanged
         FillDataGridEmpleados()
     End Sub
 
-    Private Sub txtNombreServicio_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtBuscarServicio.KeyPress
+    Private Sub txtNombreServicio_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarServicio.TextChanged
         FillDataGridServicios()
     End Sub
 
@@ -180,6 +178,10 @@ Public Class txtBuscarEmpleado
 
     '--------------------LIMPIEZA DE TEXTBOXS--------------------------!
     Private Sub cleanTextBoxsAndDataGrids()
+        'Textboxs principales
+        txtIdPago.Text = ""
+        txtFechaSO.Text = Date.Today.Date.ToShortDateString
+
         'Textboxs de servicios
         txtIdServicio.Text = ""
         txtServicioDescripcion.Text = ""
@@ -200,10 +202,21 @@ Public Class txtBuscarEmpleado
         'Textboxs generales
         txtTotal.Text = ""
         txtOtros.Text = ""
+        txtDescuentoFinal.Text = ""
+        txtSubtotal.Text = ""
+
+        'Textboxs búsquedas
+        txtBuscarCuenta.Text = ""
+        txtBuscarEmployee.Text = ""
+        txtBuscarServicio.Text = ""
 
         'Limpieza de DataGrids
         dgServicios.Rows.Clear()
         dgEmpleados.Rows.Clear()
+        dgDatosCuentas.Rows.Clear()
+
+        combitoMesInicial.SelectedIndex = 0
+        combitoMesFinal.SelectedIndex = 0
 
         labelPagoPor.Text = "Tarifas a pagar por: "
 
@@ -222,11 +235,18 @@ Public Class txtBuscarEmpleado
 
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
+        cleanTextBoxsAndDataGrids()
+
         comando.CommandText = "SELECT COUNT(*) FROM Pagos"
         Dim n As Integer
         n = comando.ExecuteScalar() + 1
 
         txtIdPago.Text = n.ToString
+
+        txtBuscarCuenta.ReadOnly = False
+        txtBuscarServicio.ReadOnly = False
+        txtBuscarEmployee.ReadOnly = False
+        txtOtros.ReadOnly = False
 
         btnNuevo.Enabled = False
         btnSalir.Enabled = False
@@ -251,14 +271,15 @@ Public Class txtBuscarEmpleado
 
     Private Sub btnGrabar_Click(sender As Object, e As EventArgs) Handles btnGrabar.Click
         If rbAgua.Checked Then
-            txtTotal.Text = "0"
-            If Not txtIdCuenta.Text.Equals("") And Not txtIdSituacion.Text.Equals("") And Not txtAnioTarifa.Text.Equals("") And Not txtOtros.Text.Equals("") And Not txtTotal.Text.Equals("") Then
+            txtTotal.Text = ""
+            If Not txtIdCuenta.Text.Equals("") And Not txtIdSituacion.Text.Equals("") And Not txtAnioTarifa.Text.Equals("") And Not txtOtros.Text.Equals("") Then
                 '   Campos de TABLA: Pagos
                 Dim idPago As Integer = CInt(txtIdPago.Text)
                 Dim idCuenta As Integer = CInt(txtIdCuenta.Text)
                 Dim fecha As Date = CDate(txtFechaSO.Text)
                 Dim tipo As String = "PAGO AGUA" 'PAGO SERVICIO ES LA OTRA OPCIÓN
                 Dim otros As Double = CDbl(Replace(txtOtros.Text, ".", ","))
+                Dim total As Double
 
                 '   Campos de TABLA: PagosAgua
                 'idPago
@@ -272,72 +293,81 @@ Public Class txtBuscarEmpleado
                 Dim TAR As Double = CDbl(txtTAR.Text)
                 Dim INFRA As Double = CDbl(txtINFRA.Text)
 
+                'CÁLCULOS Y OPERACIONES
 
 
-                If payPerYear() Then
+                If CStr(CDate(txtFechaSO.Text).Date.Year).Equals(txtAnioTarifa.Text) Then
+                    recargos = 0
+                Else
+                    descuento = 0
+                End If
+
+                'Meses a pagar
+                Dim mesesAPagar As Integer = getMonthMutiplier(getMonthNumber(combitoMesInicial), getMonthNumber(combitoMesFinal))
+
+                CF = (CF / 12) * mesesAPagar
+                txtCuotaFijaCalculada.Text = CStr(CF)
+
+                recargos = (recargos / 12) * mesesAPagar
+                txtRecargoCalculado.Text = CStr(recargos)
+
+                TAR = (TAR / 12) * mesesAPagar
+                txtTARCalculada.Text = CStr(TAR)
+
+                INFRA = (INFRA / 12) * mesesAPagar
+                txtINFRACalculada.Text = CStr(INFRA)
+
+                'CHECAR SI LOS DESCUENTOS SON VÁLIDOS INCLUSO SI SE PAGA UN AÑO ATRASADO.
+                Dim subtotal As Double = CF + TAR + INFRA + recargos ' CHECAR SI EL RECARGO SÓLO APLICA EN AÑOS ATRASADOS
+                Dim descuentoFinal As Double = subtotal * descuento
+
+                total = subtotal + CDbl(Replace(txtOtros.Text, ".", ",")) - descuentoFinal
+
+                'LLENAR TEXTBOXS DE TOTAL, DESCUENTO Y TOTAL
+                txtSubtotal.Text = Replace(CStr(subtotal), ".", ",")
+                txtDescuentoFinal.Text = Replace(CStr(descuentoFinal), ".", ",")
+                txtTotal.Text = Replace(CStr(total), ".", ",")
+
+                If payPerYear() Then 'Pago por año
                     labelPagoPor.Text = "Tarifas a pagar por: " + "Año"
-
-                    txtCuotaFijaCalculada.Text = CF
-
-                    If CStr(CDate(txtFechaSO.Text).Date.Year).Equals(txtAnioTarifa.Text) Then
-                        recargos = 0
-                    Else
-                        descuento = 0
-                    End If
-
-                    txtRecargoCalculado.Text = recargos
-
-                    txtTARCalculada.Text = TAR
-                    txtINFRACalculada.Text = INFRA
-
-                    'CHECAR SI LOS DESCUENTOS SON VÁLIDOS INCLUSO SI SE PAGA UN AÑO ATRASADO.
-                    Dim subtotal As Double = CF + TAR + INFRA + recargos ' CHECAR SI EL RECARGO SÓLO APLICA EN AÑOS ATRASADOS
-                    Dim descuentoFinal As Double = subtotal * descuento
-
-                    Dim total = subtotal + CDbl(Replace(txtOtros.Text, ".", ",")) - descuentoFinal
-
-                    'LLENAR TEXTBOXS DE TOTAL, DESCUENTO Y TOTAL
-                    txtSubtotal.Text = Replace(CStr(subtotal), ".", ",")
-                    txtDescuentoFinal.Text = Replace(CStr(descuentoFinal), ".", ",")
-                    txtTotal.Text = Replace(CStr(total), ".", ",")
-
 
                 Else 'Pago por mes
                     labelPagoPor.Text = "Tarifas a pagar por: " + "Mes"
 
-                    Dim mesesAPagar As Integer = getMonthMutiplier(getMonthNumber(combitoMesInicial), getMonthNumber(combitoMesFinal))
-
-                    CF = (CF / 12) * mesesAPagar
-                    txtCuotaFijaCalculada.Text = CStr(CF)
-
-                    If CStr(CDate(txtFechaSO.Text).Date.Year).Equals(txtAnioTarifa.Text) Then
-                        recargos = 0
-                    Else
-                        descuento = 0
-                    End If
-
-                    recargos = (recargos / 12) * mesesAPagar
-                    txtRecargoCalculado.Text = CStr(recargos)
-
-                    TAR = (TAR / 12) * mesesAPagar
-                    txtTARCalculada.Text = CStr(TAR)
-
-                    INFRA = (INFRA / 12) * mesesAPagar
-                    txtINFRACalculada.Text = CStr(INFRA)
-
-                    'CHECAR SI LOS DESCUENTOS SON VÁLIDOS INCLUSO SI SE PAGA UN AÑO ATRASADO.
-                    Dim subtotal As Double = CF + TAR + INFRA + recargos ' CHECAR SI EL RECARGO SÓLO APLICA EN AÑOS ATRASADOS
-                    Dim descuentoFinal As Double = subtotal * descuento
-
-                    Dim total = subtotal + CDbl(Replace(txtOtros.Text, ".", ",")) - descuentoFinal
-
-                    'LLENAR TEXTBOXS DE TOTAL, DESCUENTO Y TOTAL
-                    txtSubtotal.Text = Replace(CStr(subtotal), ".", ",")
-                    txtDescuentoFinal.Text = Replace(CStr(descuentoFinal), ".", ",")
-                    txtTotal.Text = Replace(CStr(total), ".", ",")
-
-                    'AQUÍ ME QUEDÉ JIJI - DAR DE ALTA EN BASE DE DATOS
                 End If
+
+
+                'DAR DE ALTA EN LA BASE DE DATOS
+                Dim query As String
+
+                '-----PAGOS
+                query = String.Format("INSERT INTO Pagos (idPago, idCuenta, fecha, tipo, otros, total) VALUES " &
+                                      "({0}, {1}, '{2}', '{3}', {4}, {5})",
+                                      idPago, idCuenta, fecha.ToShortDateString, tipo,
+                                      Replace(CStr(otros), ",", "."), Replace(CStr(total), ",", "."))
+                comando.CommandText = query
+                comando.ExecuteNonQuery()
+
+                '-----PAGOS AGUA
+                query = String.Format("INSERT INTO PagosAgua (idPago, idSituacion, idTarifa, mesInicial, mesFinal, descuento, recargos, " &
+                                      "CF, TAR, INFRA, subtotal) VALUES ({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9}, {10})",
+                                      idPago, idSituacion, idTarifa, mesInicial, mesFinal,
+                                      Replace(CStr(descuentoFinal), ",", "."), Replace(CStr(recargos), ",", "."),
+                                      Replace(CStr(CF), ",", "."), Replace(CStr(TAR), ",", "."),
+                                      Replace(CStr(INFRA), ",", "."), Replace(CStr(subtotal), ",", "."))
+                comando.CommandText = query
+                comando.ExecuteNonQuery()
+
+
+                btnGrabar.Enabled = False
+                btnNuevo.Enabled = True
+                btnSalir.Enabled = True
+
+                txtBuscarCuenta.ReadOnly = True
+                txtBuscarServicio.ReadOnly = True
+                txtBuscarEmployee.ReadOnly = True
+                txtBuscarEmployee.ReadOnly = True
+                'btnImprimir.Enabled = True
 
             Else
                 MessageBox.Show("No se permiten campos vacíos.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -358,6 +388,11 @@ Public Class txtBuscarEmpleado
         End If
         Return False
     End Function
+
+    Public Sub altasPagosAgua()
+
+    End Sub
+
 
     '           -------------------MÉTODOS DE CONTROL DE LOS MESES A PAGAR--------------------------!
     Private Sub combitoMesInicial_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combitoMesInicial.SelectedIndexChanged

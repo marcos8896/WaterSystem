@@ -6,6 +6,12 @@ Module Module1
     'Dim conexionsql As New SqlConnection("Data Source='MARCOS-LAPTOP\PLEASEWORK'; Initial Catalog='Sistema'; integrated security=true")
     'Dim conexionsql As New SqlConnection("Data Source='MARCOS-LAPTOP\PLEASEWORK'; Initial Catalog='Sistema'; User Id=sa; password='abc'")
 
+    Public Function stringConnection() As String
+        Return "Data Source='MARCOS-PC'; Initial Catalog='db_agua_potable'; Integrated security=true" 'PC
+        'Return "Data Source='MARCOS-LAPTOP\PLEASEWORK'; Initial Catalog='db_agua_potable'; Integrated security=true" 'LAPTOP
+
+
+    End Function
 
     Public Sub caracteresValidos(sender As Object, e As KeyPressEventArgs, opcion As String)
         If opcion.Equals("ALL") Then

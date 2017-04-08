@@ -123,14 +123,14 @@ Partial Class txtBuscarEmpleado
         Me.btnGrabar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.txtDescuentoFinal = New System.Windows.Forms.TextBox()
+        Me.Label27 = New System.Windows.Forms.Label()
         Me.txtSubtotal = New System.Windows.Forms.TextBox()
         Me.Label40 = New System.Windows.Forms.Label()
         Me.txtTotal = New System.Windows.Forms.TextBox()
         Me.txtOtros = New System.Windows.Forms.TextBox()
         Me.Label31 = New System.Windows.Forms.Label()
         Me.Label30 = New System.Windows.Forms.Label()
-        Me.txtDescuentoFinal = New System.Windows.Forms.TextBox()
-        Me.Label27 = New System.Windows.Forms.Label()
         Me.panelRejillaCuenta.SuspendLayout()
         CType(Me.dgDatosCuentas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelDatosCliente.SuspendLayout()
@@ -274,6 +274,7 @@ Partial Class txtBuscarEmpleado
         '
         Me.txtBuscarCuenta.Location = New System.Drawing.Point(123, 8)
         Me.txtBuscarCuenta.Name = "txtBuscarCuenta"
+        Me.txtBuscarCuenta.ReadOnly = True
         Me.txtBuscarCuenta.Size = New System.Drawing.Size(227, 20)
         Me.txtBuscarCuenta.TabIndex = 9
         '
@@ -1001,6 +1002,7 @@ Partial Class txtBuscarEmpleado
         '
         Me.txtBuscarEmployee.Location = New System.Drawing.Point(476, 9)
         Me.txtBuscarEmployee.Name = "txtBuscarEmployee"
+        Me.txtBuscarEmployee.ReadOnly = True
         Me.txtBuscarEmployee.Size = New System.Drawing.Size(195, 20)
         Me.txtBuscarEmployee.TabIndex = 30
         '
@@ -1048,6 +1050,7 @@ Partial Class txtBuscarEmpleado
         '
         Me.txtBuscarServicio.Location = New System.Drawing.Point(117, 9)
         Me.txtBuscarServicio.Name = "txtBuscarServicio"
+        Me.txtBuscarServicio.ReadOnly = True
         Me.txtBuscarServicio.Size = New System.Drawing.Size(195, 20)
         Me.txtBuscarServicio.TabIndex = 27
         '
@@ -1130,6 +1133,24 @@ Partial Class txtBuscarEmpleado
         Me.Panel6.Size = New System.Drawing.Size(339, 72)
         Me.Panel6.TabIndex = 36
         '
+        'txtDescuentoFinal
+        '
+        Me.txtDescuentoFinal.Location = New System.Drawing.Point(66, 42)
+        Me.txtDescuentoFinal.Name = "txtDescuentoFinal"
+        Me.txtDescuentoFinal.ReadOnly = True
+        Me.txtDescuentoFinal.Size = New System.Drawing.Size(101, 20)
+        Me.txtDescuentoFinal.TabIndex = 34
+        Me.txtDescuentoFinal.TabStop = False
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Location = New System.Drawing.Point(3, 45)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(62, 13)
+        Me.Label27.TabIndex = 33
+        Me.Label27.Text = "Descuento:"
+        '
         'txtSubtotal
         '
         Me.txtSubtotal.Location = New System.Drawing.Point(217, 12)
@@ -1161,6 +1182,7 @@ Partial Class txtBuscarEmpleado
         '
         Me.txtOtros.Location = New System.Drawing.Point(66, 10)
         Me.txtOtros.Name = "txtOtros"
+        Me.txtOtros.ReadOnly = True
         Me.txtOtros.Size = New System.Drawing.Size(101, 20)
         Me.txtOtros.TabIndex = 24
         Me.txtOtros.TabStop = False
@@ -1182,24 +1204,6 @@ Partial Class txtBuscarEmpleado
         Me.Label30.Size = New System.Drawing.Size(35, 13)
         Me.Label30.TabIndex = 24
         Me.Label30.Text = "Otros:"
-        '
-        'txtDescuentoFinal
-        '
-        Me.txtDescuentoFinal.Location = New System.Drawing.Point(66, 42)
-        Me.txtDescuentoFinal.Name = "txtDescuentoFinal"
-        Me.txtDescuentoFinal.ReadOnly = True
-        Me.txtDescuentoFinal.Size = New System.Drawing.Size(101, 20)
-        Me.txtDescuentoFinal.TabIndex = 34
-        Me.txtDescuentoFinal.TabStop = False
-        '
-        'Label27
-        '
-        Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(3, 45)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(62, 13)
-        Me.Label27.TabIndex = 33
-        Me.Label27.Text = "Descuento:"
         '
         'txtBuscarEmpleado
         '

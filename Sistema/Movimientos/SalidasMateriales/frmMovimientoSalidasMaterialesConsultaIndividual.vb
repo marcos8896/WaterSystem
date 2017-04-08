@@ -3,7 +3,7 @@
 Public Class frmMovimientoSalidasMaterialesConsultaIndividual
 
     '--------------------DECLARACIÓN DE VARIABLES GLOBALES DE LA CLASE--------------------------!
-    Dim conexionsql As New SqlConnection("Data Source='MARCOS-LAPTOP\PLEASEWORK'; Initial Catalog='db_agua_potable'; Integrated security=true")
+    Dim conexionsql As New SqlConnection(stringConnection())
     Dim comando As SqlCommand = conexionsql.CreateCommand()
     Dim lector As SqlDataReader
 
