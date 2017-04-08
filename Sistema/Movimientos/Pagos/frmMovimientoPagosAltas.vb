@@ -1,0 +1,420 @@
+﻿Imports System.Data.SqlClient
+
+Public Class txtBuscarEmpleado
+    '--------------------DECLARACIÓN DE VARIABLES GLOBALES DE LA CLASE--------------------------!
+    Dim conexionsql As New SqlConnection("Data Source='MARCOS-LAPTOP\PLEASEWORK'; Initial Catalog='db_agua_potable'; Integrated security=true")
+    Dim comando As SqlCommand = conexionsql.CreateCommand()
+    Dim lector As SqlDataReader
+
+    '--------------------MÉTODO LOAD--------------------------!
+    Private Sub frmMovimientoPagos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        conexionsql.Open()
+
+        FillCombitoSituacion(combitoSituacion)
+        FillCombitoTarifa(combitoIdTarifa)
+
+        combitoMesInicial.SelectedIndex = 0
+        combitoMesFinal.SelectedIndex = 0
+        txtFechaSO.Text = Date.Today.Date.ToShortDateString
+
+        rbAgua.Select()
+
+
+    End Sub
+
+    '--------------------LLENADO DE COMBOS--------------------------!
+    Private Sub FillCombitoSituacion(combo As ComboBox)
+        combo.Items.Clear()
+        comando.CommandText = "SELECT descripcion FROM Situacion"
+
+        lector = comando.ExecuteReader()
+        While lector.Read()
+            combo.Items.Add(lector(0))
+        End While
+        lector.Close()
+
+        combo.SelectedIndex = 0
+    End Sub
+
+    Private Sub FillCombitoTarifa(combo As ComboBox)
+        combo.Items.Clear()
+        comando.CommandText = "SELECT idTarifa FROM Tarifas"
+
+        lector = comando.ExecuteReader()
+        While lector.Read()
+            combo.Items.Add(lector(0))
+        End While
+        lector.Close()
+
+        combo.SelectedIndex = 0
+    End Sub
+
+    '--------------------BÚSQUEDAS DE LOS TEXTBOXS RELACIONADOS A LAS COMBOBOXS--------------------------!
+    Private Sub combitoSituacion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combitoSituacion.SelectedIndexChanged
+        comando.CommandText = String.Format(
+                              "SELECT idSituacion, descuento " &
+                              "FROM Situacion WHERE descripcion='{0}'", combitoSituacion.Text)
+
+        lector = comando.ExecuteReader()
+        lector.Read()
+
+        txtIdSituacion.Text = lector(0)
+        txtDescuento.Text = lector(1)
+
+        lector.Close()
+    End Sub
+
+    Private Sub combitoIdTarifa_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combitoIdTarifa.SelectedIndexChanged
+        comando.CommandText = String.Format(
+                              "SELECT anio, CF, TAR, recargos, INFRA " &
+                              "FROM Tarifas WHERE idTarifa='{0}'", combitoIdTarifa.Text)
+
+        lector = comando.ExecuteReader()
+        lector.Read()
+
+        txtAnioTarifa.Text = lector(0)
+        txtCuotaFija.Text = lector(1)
+        txtTAR.Text = lector(2)
+        txtRecargo.Text = lector(3)
+        txtINFRA.Text = lector(4)
+
+        lector.Close()
+    End Sub
+
+
+    '--------------------LLENADO DE LA REJILLAS--------------------------!
+    Private Sub FillDataGridCuentas()
+        Dim query As String = String.Format("SELECT c.idCuenta, c.nombre, ca.idCalle, ca.Nombre, " &
+                                            "c.fechaAlta, c.ultimoPagoA, c.ultimoPagoM " &
+                                            "FROM Cuentas c " &
+                                            "INNER JOIN Calles ca ON c.idCalle = ca.idCalle " &
+                                            "WHERE c.nombre LIKE '{0}%'", Trim(txtBuscarCuenta.Text))
+        comando.CommandText = query
+        lector = comando.ExecuteReader()
+        dgDatosCuentas.Rows.Clear()
+        While lector.Read()
+            dgDatosCuentas.Rows.Add(lector(0), lector(1), lector(2), lector(3),
+                                                        CDate(lector(4)).ToShortDateString, lector(5),
+                                                        lector(5), lector(6))
+        End While
+        lector.Close()
+
+    End Sub
+
+    Private Sub FillDataGridServicios()
+        Dim query As String = String.Format("SELECT idServicio, descripcion, precio " &
+                                            "FROM Servicios " &
+                                            "WHERE descripcion LIKE '{0}%'", Trim(txtBuscarServicio.Text))
+        comando.CommandText = query
+        lector = comando.ExecuteReader()
+        dgServicios.Rows.Clear()
+        
+        While lector.Read()
+            dgServicios.Rows.Add(lector(0), lector(1), lector(2))
+        End While
+        lector.Close()
+
+    End Sub
+
+    Private Sub FillDataGridEmpleados()
+        Dim query As String = String.Format("SELECT idEmpleado, nombre, celular " &
+                                            "FROM Empleados " &
+                                            "WHERE nombre LIKE '{0}%'", Trim(txtBuscarEmployee.Text))
+        comando.CommandText = query
+        lector = comando.ExecuteReader()
+        dgEmpleados.Rows.Clear()
+        While lector.Read()
+            dgEmpleados.Rows.Add(lector(0), lector(1), lector(2))
+        End While
+        lector.Close()
+
+    End Sub
+
+    '--------------------KEYPRESS'--------------------------!
+    Private Sub txtNombreCliente_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtBuscarCuenta.KeyPress
+        FillDataGridCuentas()
+    End Sub
+
+    Private Sub txtNombreEmpleado_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtBuscarEmployee.KeyPress
+        FillDataGridEmpleados()
+    End Sub
+
+    Private Sub txtNombreServicio_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtBuscarServicio.KeyPress
+        FillDataGridServicios()
+    End Sub
+
+    '--------------------RELLENADO DE TEXTBOXS MEDIANTE DATAGRIDs--------------------------!
+    Private Sub dgDatosCuentas_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgDatosCuentas.CellClick
+        Dim row As DataGridViewRow = dgDatosCuentas.CurrentRow
+
+        If Not IsDBNull(row) Then
+            txtIdCuenta.Text = row.Cells(0).Value
+            txtCuentaNombre.Text = row.Cells(1).Value
+            txtCuentaIdCalle.Text = row.Cells(2).Value
+            txtCuentaCalle.Text = row.Cells(3).Value
+            txtCuentaUltimoM.Text = row.Cells(5).Value
+            txtCuentaUltimoA.Text = row.Cells(6).Value
+        End If
+
+    End Sub
+
+    Private Sub dgServicios_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgServicios.CellClick
+        Dim row As DataGridViewRow = dgServicios.CurrentRow
+
+        If Not IsDBNull(row) Then
+            txtIdServicio.Text = row.Cells(0).Value
+            txtServicioDescripcion.Text = row.Cells(1).Value
+            txtServicioPrecio.Text = row.Cells(2).Value
+
+        End If
+    End Sub
+
+    Private Sub dgEmpleados_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgEmpleados.CellClick
+        Dim row As DataGridViewRow = dgEmpleados.CurrentRow
+
+        If Not IsDBNull(row) Then
+            txtIdEmpleado.Text = row.Cells(0).Value
+            txtEmpleadoNombre.Text = row.Cells(1).Value
+        End If
+    End Sub
+
+    '--------------------LIMPIEZA DE TEXTBOXS--------------------------!
+    Private Sub cleanTextBoxsAndDataGrids()
+        'Textboxs de servicios
+        txtIdServicio.Text = ""
+        txtServicioDescripcion.Text = ""
+        txtServicioPrecio.Text = ""
+        txtBuscarServicio.Text = ""
+
+        'Textboxs de empleados
+        txtIdEmpleado.Text = ""
+        txtEmpleadoNombre.Text = ""
+        txtBuscarEmployee.Text = ""
+
+        'Textboxs de tarifas
+        txtCuotaFijaCalculada.Text = ""
+        txtRecargoCalculado.Text = ""
+        txtTARCalculada.Text = ""
+        txtINFRACalculada.Text = ""
+
+        'Textboxs generales
+        txtTotal.Text = ""
+        txtOtros.Text = ""
+
+        'Limpieza de DataGrids
+        dgServicios.Rows.Clear()
+        dgEmpleados.Rows.Clear()
+
+        labelPagoPor.Text = "Tarifas a pagar por: "
+
+    End Sub
+
+    '--------------------MÉTODOS DE SALIDA DEL FORMULARIO--------------------------!
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        conexionsql.Close()
+        Me.Dispose()
+    End Sub
+
+    Private Sub frmMovimientoPagosAltas_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        conexionsql.Close()
+        Me.Dispose()
+    End Sub
+
+
+    Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
+        comando.CommandText = "SELECT COUNT(*) FROM Pagos"
+        Dim n As Integer
+        n = comando.ExecuteScalar() + 1
+
+        txtIdPago.Text = n.ToString
+
+        btnNuevo.Enabled = False
+        btnSalir.Enabled = False
+        btnGrabar.Enabled = True
+
+    End Sub
+
+    Private Sub rbAgua_Click(sender As Object, e As EventArgs) Handles rbAgua.Click
+        panelPagoAgua.Visible = True
+        panelServiciosAtendidos.Visible = False
+
+        cleanTextBoxsAndDataGrids()
+
+    End Sub
+
+    Private Sub rbServicios_Click(sender As Object, e As EventArgs) Handles rbServicios.Click
+        panelPagoAgua.Visible = False
+        panelServiciosAtendidos.Visible = True
+
+        cleanTextBoxsAndDataGrids()
+    End Sub
+
+    Private Sub btnGrabar_Click(sender As Object, e As EventArgs) Handles btnGrabar.Click
+        If rbAgua.Checked Then
+            txtTotal.Text = "0"
+            If Not txtIdCuenta.Text.Equals("") And Not txtIdSituacion.Text.Equals("") And Not txtAnioTarifa.Text.Equals("") And Not txtOtros.Text.Equals("") And Not txtTotal.Text.Equals("") Then
+                '   Campos de TABLA: Pagos
+                Dim idPago As Integer = CInt(txtIdPago.Text)
+                Dim idCuenta As Integer = CInt(txtIdCuenta.Text)
+                Dim fecha As Date = CDate(txtFechaSO.Text)
+                Dim tipo As String = "PAGO AGUA" 'PAGO SERVICIO ES LA OTRA OPCIÓN
+                Dim otros As Double = CDbl(Replace(txtOtros.Text, ".", ","))
+
+                '   Campos de TABLA: PagosAgua
+                'idPago
+                Dim idSituacion As Integer = CInt(txtIdSituacion.Text)
+                Dim idTarifa As Integer = CInt(combitoIdTarifa.Text)
+                Dim mesInicial As Integer = getMonthNumber(combitoMesInicial)
+                Dim mesFinal As Integer = getMonthNumber(combitoMesFinal)
+                Dim descuento As Double = CDbl(txtDescuento.Text) 'Es un porcentaje
+                Dim recargos As Double = CDbl(txtRecargo.Text)
+                Dim CF As Double = CDbl(txtCuotaFija.Text)
+                Dim TAR As Double = CDbl(txtTAR.Text)
+                Dim INFRA As Double = CDbl(txtINFRA.Text)
+
+
+
+                If payPerYear() Then
+                    labelPagoPor.Text = "Tarifas a pagar por: " + "Año"
+
+                    txtCuotaFijaCalculada.Text = CF
+
+                    If CStr(CDate(txtFechaSO.Text).Date.Year).Equals(txtAnioTarifa.Text) Then
+                        recargos = 0
+                    Else
+                        descuento = 0
+                    End If
+
+                    txtRecargoCalculado.Text = recargos
+
+                    txtTARCalculada.Text = TAR
+                    txtINFRACalculada.Text = INFRA
+
+                    'CHECAR SI LOS DESCUENTOS SON VÁLIDOS INCLUSO SI SE PAGA UN AÑO ATRASADO.
+                    Dim subtotal As Double = CF + TAR + INFRA + recargos ' CHECAR SI EL RECARGO SÓLO APLICA EN AÑOS ATRASADOS
+                    Dim descuentoFinal As Double = subtotal * descuento
+
+                    Dim total = subtotal + CDbl(Replace(txtOtros.Text, ".", ",")) - descuentoFinal
+
+                    'LLENAR TEXTBOXS DE TOTAL, DESCUENTO Y TOTAL
+                    txtSubtotal.Text = Replace(CStr(subtotal), ".", ",")
+                    txtDescuentoFinal.Text = Replace(CStr(descuentoFinal), ".", ",")
+                    txtTotal.Text = Replace(CStr(total), ".", ",")
+
+
+                Else 'Pago por mes
+                    labelPagoPor.Text = "Tarifas a pagar por: " + "Mes"
+
+                    Dim mesesAPagar As Integer = getMonthMutiplier(getMonthNumber(combitoMesInicial), getMonthNumber(combitoMesFinal))
+
+                    CF = (CF / 12) * mesesAPagar
+                    txtCuotaFijaCalculada.Text = CStr(CF)
+
+                    If CStr(CDate(txtFechaSO.Text).Date.Year).Equals(txtAnioTarifa.Text) Then
+                        recargos = 0
+                    Else
+                        descuento = 0
+                    End If
+
+                    recargos = (recargos / 12) * mesesAPagar
+                    txtRecargoCalculado.Text = CStr(recargos)
+
+                    TAR = (TAR / 12) * mesesAPagar
+                    txtTARCalculada.Text = CStr(TAR)
+
+                    INFRA = (INFRA / 12) * mesesAPagar
+                    txtINFRACalculada.Text = CStr(INFRA)
+
+                    'CHECAR SI LOS DESCUENTOS SON VÁLIDOS INCLUSO SI SE PAGA UN AÑO ATRASADO.
+                    Dim subtotal As Double = CF + TAR + INFRA + recargos ' CHECAR SI EL RECARGO SÓLO APLICA EN AÑOS ATRASADOS
+                    Dim descuentoFinal As Double = subtotal * descuento
+
+                    Dim total = subtotal + CDbl(Replace(txtOtros.Text, ".", ",")) - descuentoFinal
+
+                    'LLENAR TEXTBOXS DE TOTAL, DESCUENTO Y TOTAL
+                    txtSubtotal.Text = Replace(CStr(subtotal), ".", ",")
+                    txtDescuentoFinal.Text = Replace(CStr(descuentoFinal), ".", ",")
+                    txtTotal.Text = Replace(CStr(total), ".", ",")
+
+                    'AQUÍ ME QUEDÉ JIJI - DAR DE ALTA EN BASE DE DATOS
+                End If
+
+            Else
+                MessageBox.Show("No se permiten campos vacíos.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+            End If
+
+        End If
+
+        If rbServicios.Checked Then
+
+        End If
+    End Sub
+
+    '--------------------MÉTODOS AUXILIARES PARA LAS ALTAS DE PagosAgua--------------------------!
+    Public Function payPerYear() As Boolean
+        If getMonthNumber(combitoMesInicial) = 1 And getMonthNumber(combitoMesFinal) = 12 Then ' Pago por año
+            Return True
+        End If
+        Return False
+    End Function
+
+    '           -------------------MÉTODOS DE CONTROL DE LOS MESES A PAGAR--------------------------!
+    Private Sub combitoMesInicial_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combitoMesInicial.SelectedIndexChanged
+        Dim months() As String = {"ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO",
+                                  "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE",
+                                  "DICIEMBRE"}
+        Dim numberMonths() As Integer = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
+
+        combitoMesFinal.Items.Clear()
+
+        For x = combitoMesInicial.SelectedIndex To 11
+            combitoMesFinal.Items.Add(months(x))
+        Next
+
+        combitoMesFinal.SelectedIndex = 0
+    End Sub
+
+
+    Private Function getMonthNumber(combito As ComboBox)
+
+        Dim months() As String = {"ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO",
+                                  "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE",
+                                  "DICIEMBRE"}
+        Dim monthsNumber() As Integer = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
+
+        Dim mes As String = combito.Text
+        Dim x As Integer = 0
+        While (x <= 11)
+            If mes.Equals(months(x)) Then
+                Return monthsNumber(x)
+            End If
+
+            x += 1
+        End While
+    End Function
+
+    Public Function getMonthMutiplier(mesInicial As Integer, mesFinal As Integer) As Integer
+        Dim x As Integer = mesInicial - 1
+        Dim cont As Integer = 0
+
+        While (x <= mesFinal - 1)
+            cont += 1
+            x += 1
+        End While
+
+        Return cont
+    End Function
+
+    '--------------------VALIDACIÓN DE CARACTERES VÁLIDOS--------------------------!
+    Private Sub txtOtros_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtOtros.KeyPress
+        caracteresValidos(sender, e, "NUMBERS")
+
+        'Sólo se permite un punto en la cadena.
+        If (e.KeyChar = "." And txtOtros.Text.Contains(".")) Then
+            e.Handled = True
+        End If
+
+    End Sub
+
+End Class
