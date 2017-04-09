@@ -15,7 +15,7 @@ Public Class txtBuscarEmpleado
 
         cleanTextBoxsAndDataGrids()
 
-        rbAgua.Select()
+
 
 
     End Sub
@@ -182,6 +182,14 @@ Public Class txtBuscarEmpleado
         txtIdPago.Text = ""
         txtFechaSO.Text = Date.Today.Date.ToShortDateString
 
+        'Textbox de cuentas
+        txtCuentaNombre.Text = ""
+        txtCuentaCalle.Text = ""
+        txtIdCuenta.Text = ""
+        txtCuentaIdCalle.Text = ""
+        txtCuentaUltimoA.Text = ""
+        txtCuentaUltimoM.Text = ""
+
         'Textboxs de servicios
         txtIdServicio.Text = ""
         txtServicioDescripcion.Text = ""
@@ -252,11 +260,18 @@ Public Class txtBuscarEmpleado
         btnSalir.Enabled = False
         btnGrabar.Enabled = True
 
+        panelPagoAgua.Enabled = True
+
     End Sub
 
     Private Sub rbAgua_Click(sender As Object, e As EventArgs) Handles rbAgua.Click
         panelPagoAgua.Visible = True
         panelServiciosAtendidos.Visible = False
+
+        lblDescuento.Visible = True
+        txtDescuentoFinal.Visible = True
+
+        panelTipoPago.Enabled = False
 
         cleanTextBoxsAndDataGrids()
 
@@ -266,12 +281,16 @@ Public Class txtBuscarEmpleado
         panelPagoAgua.Visible = False
         panelServiciosAtendidos.Visible = True
 
+        lblDescuento.Visible = False
+        txtDescuentoFinal.Visible = False
+
+        panelTipoPago.Enabled = False
+
         cleanTextBoxsAndDataGrids()
     End Sub
 
     Private Sub btnGrabar_Click(sender As Object, e As EventArgs) Handles btnGrabar.Click
         If rbAgua.Checked Then
-            txtTotal.Text = ""
             If Not txtIdCuenta.Text.Equals("") And Not txtIdSituacion.Text.Equals("") And Not txtAnioTarifa.Text.Equals("") And Not txtOtros.Text.Equals("") Then
                 '   Campos de TABLA: Pagos
                 Dim idPago As Integer = CInt(txtIdPago.Text)
@@ -359,15 +378,7 @@ Public Class txtBuscarEmpleado
                 comando.ExecuteNonQuery()
 
 
-                btnGrabar.Enabled = False
-                btnNuevo.Enabled = True
-                btnSalir.Enabled = True
-
-                txtBuscarCuenta.ReadOnly = True
-                txtBuscarServicio.ReadOnly = True
-                txtBuscarEmployee.ReadOnly = True
-                txtBuscarEmployee.ReadOnly = True
-                'btnImprimir.Enabled = True
+                habilitarBotonesGrabar()
 
             Else
                 MessageBox.Show("No se permiten campos vacíos.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -376,7 +387,58 @@ Public Class txtBuscarEmpleado
 
         End If
 
+
         If rbServicios.Checked Then
+            If Not txtIdCuenta.Text.Equals("") And Not txtIdServicio.Text.Equals("") And Not txtIdEmpleado.Text.Equals("") And Not txtOtros.Text.Equals("") Then
+                '   Campos de TABLA: Pagos
+                Dim idPago As Integer = CInt(txtIdPago.Text)
+                Dim idCuenta As Integer = CInt(txtIdCuenta.Text)
+                Dim fecha As Date = CDate(txtFechaSO.Text)
+                Dim tipo As String = "PAGO SERVICIO" 'PAGO SERVICIO ES LA OTRA OPCIÓN
+                Dim otros As Double = CDbl(Replace(txtOtros.Text, ".", ","))
+                Dim total As Double
+
+                '   Campos de TABLA: ServiciosAtendidos
+                'idPago
+                Dim idServicio As Integer = CInt(txtIdServicio.Text)
+                Dim idEmpleado As Integer = CInt(txtIdEmpleado.Text)
+                Dim precioServicio As Double = CDbl(Replace(txtServicioPrecio.Text, ".", ","))
+
+                '-----------------------------------
+                Dim subtotal As Double = precioServicio
+
+                total = subtotal + otros
+
+                'LLENAR TEXTBOXS DE TOTAL, DESCUENTO Y TOTAL
+                txtSubtotal.Text = Replace(CStr(subtotal), ".", ",")
+                txtTotal.Text = Replace(CStr(total), ".", ",")
+
+
+                'DAR DE ALTA EN LA BASE DE DATOS
+
+                Dim query As String
+
+                '-----PAGOS
+                query = String.Format("INSERT INTO Pagos (idPago, idCuenta, fecha, tipo, otros, total) VALUES " &
+                                      "({0}, {1}, '{2}', '{3}', {4}, {5})",
+                                      idPago, idCuenta, fecha.ToShortDateString, tipo,
+                                      Replace(CStr(otros), ",", "."), Replace(CStr(total), ",", "."))
+                comando.CommandText = query
+                comando.ExecuteNonQuery()
+
+
+                '-----SERVICIOSATENDIDOS
+                query = String.Format("INSERT INTO ServiciosAtendidos (idPago, idServicio, idEmpleado, precio) " &
+                                      "VALUES ({0}, {1}, {2}, {3})", idPago, idServicio, idEmpleado, Replace(CStr(precioServicio), ",", "."))
+                comando.CommandText = query
+                comando.ExecuteNonQuery()
+
+
+                habilitarBotonesGrabar()
+
+            Else
+                MessageBox.Show("No se permiten campos vacíos.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            End If
 
         End If
     End Sub
@@ -388,10 +450,6 @@ Public Class txtBuscarEmpleado
         End If
         Return False
     End Function
-
-    Public Sub altasPagosAgua()
-
-    End Sub
 
 
     '           -------------------MÉTODOS DE CONTROL DE LOS MESES A PAGAR--------------------------!
@@ -452,4 +510,23 @@ Public Class txtBuscarEmpleado
 
     End Sub
 
+    Public Sub habilitarBotonesGrabar()
+        btnGrabar.Enabled = False
+        btnNuevo.Enabled = True
+        btnSalir.Enabled = True
+
+        panelTipoPago.Enabled = True
+
+        txtBuscarCuenta.ReadOnly = True
+        txtBuscarServicio.ReadOnly = True
+        txtBuscarEmployee.ReadOnly = True
+        txtBuscarEmployee.ReadOnly = True
+        'btnImprimir.Enabled = True
+
+        panelPagoAgua.Enabled = False
+    End Sub
+
+    Private Sub combitoMesFinal_SelectedIndexChanged(sender As Object, e As EventArgs) Handles combitoMesFinal.SelectedIndexChanged
+
+    End Sub
 End Class

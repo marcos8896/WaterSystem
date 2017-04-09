@@ -51,7 +51,7 @@ Partial Class txtBuscarEmpleado
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtIdCuenta = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.panelTipoPago = New System.Windows.Forms.Panel()
         Me.rbServicios = New System.Windows.Forms.RadioButton()
         Me.rbAgua = New System.Windows.Forms.RadioButton()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -124,7 +124,7 @@ Partial Class txtBuscarEmpleado
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.txtDescuentoFinal = New System.Windows.Forms.TextBox()
-        Me.Label27 = New System.Windows.Forms.Label()
+        Me.lblDescuento = New System.Windows.Forms.Label()
         Me.txtSubtotal = New System.Windows.Forms.TextBox()
         Me.Label40 = New System.Windows.Forms.Label()
         Me.txtTotal = New System.Windows.Forms.TextBox()
@@ -134,7 +134,7 @@ Partial Class txtBuscarEmpleado
         Me.panelRejillaCuenta.SuspendLayout()
         CType(Me.dgDatosCuentas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelDatosCliente.SuspendLayout()
-        Me.Panel1.SuspendLayout()
+        Me.panelTipoPago.SuspendLayout()
         Me.panelPagoAgua.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -416,18 +416,18 @@ Partial Class txtBuscarEmpleado
         Me.Label6.TabIndex = 0
         Me.Label6.Text = "Nombre:"
         '
-        'Panel1
+        'panelTipoPago
         '
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.rbServicios)
-        Me.Panel1.Controls.Add(Me.rbAgua)
-        Me.Panel1.Controls.Add(Me.Label9)
-        Me.Panel1.Controls.Add(Me.Label10)
-        Me.Panel1.Location = New System.Drawing.Point(587, 210)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(166, 120)
-        Me.Panel1.TabIndex = 15
-        Me.Panel1.TabStop = True
+        Me.panelTipoPago.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.panelTipoPago.Controls.Add(Me.rbServicios)
+        Me.panelTipoPago.Controls.Add(Me.rbAgua)
+        Me.panelTipoPago.Controls.Add(Me.Label9)
+        Me.panelTipoPago.Controls.Add(Me.Label10)
+        Me.panelTipoPago.Location = New System.Drawing.Point(587, 210)
+        Me.panelTipoPago.Name = "panelTipoPago"
+        Me.panelTipoPago.Size = New System.Drawing.Size(166, 120)
+        Me.panelTipoPago.TabIndex = 15
+        Me.panelTipoPago.TabStop = True
         '
         'rbServicios
         '
@@ -478,6 +478,7 @@ Partial Class txtBuscarEmpleado
         Me.panelPagoAgua.Controls.Add(Me.Panel2)
         Me.panelPagoAgua.Controls.Add(Me.Panel4)
         Me.panelPagoAgua.Controls.Add(Me.Panel3)
+        Me.panelPagoAgua.Enabled = False
         Me.panelPagoAgua.Location = New System.Drawing.Point(12, 336)
         Me.panelPagoAgua.Name = "panelPagoAgua"
         Me.panelPagoAgua.Size = New System.Drawing.Size(741, 228)
@@ -1121,7 +1122,7 @@ Partial Class txtBuscarEmpleado
         '
         Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel6.Controls.Add(Me.txtDescuentoFinal)
-        Me.Panel6.Controls.Add(Me.Label27)
+        Me.Panel6.Controls.Add(Me.lblDescuento)
         Me.Panel6.Controls.Add(Me.txtSubtotal)
         Me.Panel6.Controls.Add(Me.Label40)
         Me.Panel6.Controls.Add(Me.txtTotal)
@@ -1142,14 +1143,14 @@ Partial Class txtBuscarEmpleado
         Me.txtDescuentoFinal.TabIndex = 34
         Me.txtDescuentoFinal.TabStop = False
         '
-        'Label27
+        'lblDescuento
         '
-        Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(3, 45)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(62, 13)
-        Me.Label27.TabIndex = 33
-        Me.Label27.Text = "Descuento:"
+        Me.lblDescuento.AutoSize = True
+        Me.lblDescuento.Location = New System.Drawing.Point(3, 45)
+        Me.lblDescuento.Name = "lblDescuento"
+        Me.lblDescuento.Size = New System.Drawing.Size(62, 13)
+        Me.lblDescuento.TabIndex = 33
+        Me.lblDescuento.Text = "Descuento:"
         '
         'txtSubtotal
         '
@@ -1213,7 +1214,7 @@ Partial Class txtBuscarEmpleado
         Me.ControlBox = False
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.panelBotones)
-        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.panelTipoPago)
         Me.Controls.Add(Me.panelDatosCliente)
         Me.Controls.Add(Me.panelRejillaCuenta)
         Me.Controls.Add(Me.panelPagoAgua)
@@ -1226,8 +1227,8 @@ Partial Class txtBuscarEmpleado
         CType(Me.dgDatosCuentas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelDatosCliente.ResumeLayout(False)
         Me.panelDatosCliente.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        Me.panelTipoPago.ResumeLayout(False)
+        Me.panelTipoPago.PerformLayout()
         Me.panelPagoAgua.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
@@ -1267,7 +1268,7 @@ Partial Class txtBuscarEmpleado
     Friend WithEvents Label5 As Label
     Friend WithEvents txtIdCuenta As TextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents panelTipoPago As Panel
     Friend WithEvents rbServicios As RadioButton
     Friend WithEvents rbAgua As RadioButton
     Friend WithEvents Label9 As Label
@@ -1357,5 +1358,5 @@ Partial Class txtBuscarEmpleado
     Friend WithEvents txtSubtotal As TextBox
     Friend WithEvents Label40 As Label
     Friend WithEvents txtDescuentoFinal As TextBox
-    Friend WithEvents Label27 As Label
+    Friend WithEvents lblDescuento As Label
 End Class
