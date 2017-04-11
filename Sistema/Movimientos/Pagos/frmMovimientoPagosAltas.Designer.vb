@@ -1078,6 +1078,7 @@ Partial Class txtBuscarEmpleado
         '
         'btnNuevo
         '
+        Me.btnNuevo.Enabled = False
         Me.btnNuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnNuevo.Location = New System.Drawing.Point(42, 6)
         Me.btnNuevo.Name = "btnNuevo"
@@ -1211,7 +1212,6 @@ Partial Class txtBuscarEmpleado
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(765, 662)
-        Me.ControlBox = False
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.panelBotones)
         Me.Controls.Add(Me.panelTipoPago)
