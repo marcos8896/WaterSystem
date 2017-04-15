@@ -83,4 +83,8 @@
     Private Sub tsmiPagosAltas_Click(sender As Object, e As EventArgs) Handles tsmiPagosAltas.Click
         txtBuscarEmpleado.ShowDialog()
     End Sub
+
+    Private Sub tsmiPagosConsultaIndividual_Click(sender As Object, e As EventArgs) Handles tsmiPagosConsultaIndividual.Click
+        frmMovimientoPagosConsultaIndividual.ShowDialog()
+    End Sub
 End Class

@@ -50,6 +50,7 @@ Partial Class frmMain
         Me.tsmiSalidasMaterialesConGen = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiPagos = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiPagosAltas = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiPagosConsultaIndividual = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuPrincipal.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -220,7 +221,7 @@ Partial Class frmMain
         '
         'tsmiPagos
         '
-        Me.tsmiPagos.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiPagosAltas})
+        Me.tsmiPagos.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiPagosAltas, Me.tsmiPagosConsultaIndividual})
         Me.tsmiPagos.Name = "tsmiPagos"
         Me.tsmiPagos.Size = New System.Drawing.Size(164, 22)
         Me.tsmiPagos.Text = "Pagos"
@@ -228,8 +229,14 @@ Partial Class frmMain
         'tsmiPagosAltas
         '
         Me.tsmiPagosAltas.Name = "tsmiPagosAltas"
-        Me.tsmiPagosAltas.Size = New System.Drawing.Size(152, 22)
+        Me.tsmiPagosAltas.Size = New System.Drawing.Size(176, 22)
         Me.tsmiPagosAltas.Text = "Altas"
+        '
+        'tsmiPagosConsultaIndividual
+        '
+        Me.tsmiPagosConsultaIndividual.Name = "tsmiPagosConsultaIndividual"
+        Me.tsmiPagosConsultaIndividual.Size = New System.Drawing.Size(176, 22)
+        Me.tsmiPagosConsultaIndividual.Text = "Consulta Individual"
         '
         'frmMain
         '
@@ -276,4 +283,5 @@ Partial Class frmMain
     Friend WithEvents tsmiSalidasMaterialesConGen As ToolStripMenuItem
     Friend WithEvents tsmiPagos As ToolStripMenuItem
     Friend WithEvents tsmiPagosAltas As ToolStripMenuItem
+    Friend WithEvents tsmiPagosConsultaIndividual As ToolStripMenuItem
 End Class
