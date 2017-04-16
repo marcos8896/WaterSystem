@@ -19,7 +19,7 @@ Public Class txtBuscarEmpleado
         FillCombitoSituacion(combitoSituacion)
         FillCombitoTarifa(combitoIdTarifa)
 
-        cleanTextBoxsAndDataGrids()
+        clearTextBoxsAndDataGrids()
     End Sub
 
 
@@ -132,7 +132,7 @@ Public Class txtBuscarEmpleado
         comando.CommandText = query
         lector = comando.ExecuteReader()
         dgServicios.Rows.Clear()
-        
+
         While lector.Read()
             dgServicios.Rows.Add(lector(0), lector(1), lector(2))
         End While
@@ -239,7 +239,7 @@ Public Class txtBuscarEmpleado
 
     '--------------------MÉTODOS DE ACCIÓN (DE BOTONES PRINCIPALES)--------------------------!
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
-        cleanTextBoxsAndDataGrids()
+        clearTextBoxsAndDataGrids()
 
         comando.CommandText = "SELECT COUNT(*) FROM Pagos"
         Dim n As Integer
@@ -272,7 +272,7 @@ Public Class txtBuscarEmpleado
 
         btnNuevo.Enabled = True
 
-        cleanTextBoxsAndDataGrids()
+        clearTextBoxsAndDataGrids()
 
     End Sub
 
@@ -287,7 +287,7 @@ Public Class txtBuscarEmpleado
 
         btnNuevo.Enabled = True
 
-        cleanTextBoxsAndDataGrids()
+        clearTextBoxsAndDataGrids()
     End Sub
 
     Private Sub btnGrabar_Click(sender As Object, e As EventArgs) Handles btnGrabar.Click
@@ -563,7 +563,7 @@ Public Class txtBuscarEmpleado
 
 
     '--------------------MÉTODOS LIMPIEZA DE TEXTBOXS--------------------------!
-    Private Sub cleanTextBoxsAndDataGrids()
+    Private Sub clearTextBoxsAndDataGrids()
         'Textboxs principales
         txtIdPago.Text = ""
         txtFechaSO.Text = Date.Today.Date.ToShortDateString
@@ -727,13 +727,15 @@ Public Class txtBuscarEmpleado
     End Sub
 
     Private Sub txtCuentaUltimoM_TextChanged(sender As Object, e As EventArgs) Handles txtCuentaUltimoM.TextChanged
-        If CInt(txtCuentaUltimoM.Text) = 0 Then
-            combitoMesInicial.SelectedIndex = 0
-        Else
-            If CInt(txtCuentaUltimoM.Text = 12) Then
+        If Not txtCuentaUltimoM.Text.Equals("") Then
+            If CInt(txtCuentaUltimoM.Text) = 0 Then
                 combitoMesInicial.SelectedIndex = 0
             Else
-                combitoMesInicial.SelectedIndex = txtCuentaUltimoM.Text
+                If CInt(txtCuentaUltimoM.Text = 12) Then
+                    combitoMesInicial.SelectedIndex = 0
+                Else
+                    combitoMesInicial.SelectedIndex = txtCuentaUltimoM.Text
+                End If
             End If
         End If
     End Sub
