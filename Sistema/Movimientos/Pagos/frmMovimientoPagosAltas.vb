@@ -253,11 +253,10 @@ Public Class txtBuscarEmpleado
         txtOtros.ReadOnly = False
 
         btnNuevo.Enabled = False
-        btnSalir.Enabled = False
         btnGrabar.Enabled = True
 
         panelPagoAgua.Enabled = True
-        panelTipoPago.Enabled = False
+        'panelTipoPago.Enabled = False
 
     End Sub
 
@@ -268,9 +267,15 @@ Public Class txtBuscarEmpleado
         lblDescuento.Visible = True
         txtDescuentoFinal.Visible = True
 
-        panelTipoPago.Enabled = False
+        'panelTipoPago.Enabled = False
 
         btnNuevo.Enabled = True
+        btnGrabar.Enabled = False
+
+        txtBuscarCuenta.ReadOnly = True
+        txtBuscarServicio.ReadOnly = True
+        txtBuscarEmployee.ReadOnly = True
+        txtOtros.ReadOnly = True
 
         clearTextBoxsAndDataGrids()
 
@@ -283,9 +288,15 @@ Public Class txtBuscarEmpleado
         lblDescuento.Visible = False
         txtDescuentoFinal.Visible = False
 
-        panelTipoPago.Enabled = False
+        'panelTipoPago.Enabled = False
 
         btnNuevo.Enabled = True
+        btnGrabar.Enabled = False
+
+        txtBuscarCuenta.ReadOnly = True
+        txtBuscarServicio.ReadOnly = True
+        txtBuscarEmployee.ReadOnly = True
+        txtOtros.ReadOnly = True
 
         clearTextBoxsAndDataGrids()
     End Sub
@@ -554,6 +565,7 @@ Public Class txtBuscarEmpleado
         'btnImprimir.Enabled = True
 
         panelPagoAgua.Enabled = False
+
     End Sub
 
 

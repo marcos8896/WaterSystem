@@ -971,6 +971,7 @@ Partial Class txtBuscarEmpleado
         '
         'dgEmpleados
         '
+        Me.dgEmpleados.AllowUserToAddRows = False
         Me.dgEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgEmpleados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idEmpleado, Me.nombreEmpleado, Me.celular})
         Me.dgEmpleados.Location = New System.Drawing.Point(363, 35)
@@ -1018,6 +1019,7 @@ Partial Class txtBuscarEmpleado
         '
         'dgServicios
         '
+        Me.dgServicios.AllowUserToAddRows = False
         Me.dgServicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgServicios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idServicio, Me.descripcion, Me.precio})
         Me.dgServicios.Location = New System.Drawing.Point(11, 35)
@@ -1217,8 +1219,8 @@ Partial Class txtBuscarEmpleado
         Me.Controls.Add(Me.panelTipoPago)
         Me.Controls.Add(Me.panelDatosCliente)
         Me.Controls.Add(Me.panelRejillaCuenta)
-        Me.Controls.Add(Me.panelPagoAgua)
         Me.Controls.Add(Me.panelServiciosAtendidos)
+        Me.Controls.Add(Me.panelPagoAgua)
         Me.Name = "txtBuscarEmpleado"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Pagos - Altas"
