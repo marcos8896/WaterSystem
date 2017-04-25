@@ -213,6 +213,7 @@ Partial Class txtBuscarEmpleado
         '
         'dgDatosCuentas
         '
+        Me.dgDatosCuentas.AllowUserToAddRows = False
         Me.dgDatosCuentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgDatosCuentas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idCuenta, Me.Nombre, Me.idCalle, Me.Calle, Me.fechaAlta, Me.UltimoPagoAnio, Me.UltimoPagoMes})
         Me.dgDatosCuentas.Location = New System.Drawing.Point(6, 43)

@@ -7,8 +7,8 @@ Module Module1
     'Dim conexionsql As New SqlConnection("Data Source='MARCOS-LAPTOP\PLEASEWORK'; Initial Catalog='Sistema'; User Id=sa; password='abc'")
 
     Public Function stringConnection() As String
-        Return "Data Source='MARCOS-PC'; Initial Catalog='db_agua_potable'; Integrated security=true" 'PC
-        'Return "Data Source='MARCOS-LAPTOP\PLEASEWORK'; Initial Catalog='db_agua_potable'; Integrated security=true" 'LAPTOP
+        'Return "Data Source='MARCOS-PC'; Initial Catalog='db_agua_potable'; Integrated security=true" 'PC
+        Return "Data Source='MARCOS-LAPTOP\PLEASEWORK'; Initial Catalog='db_agua_potable'; Integrated security=true" 'LAPTOP
 
 
     End Function
