@@ -2,7 +2,7 @@
 
 Public Class frmMovimientoActividadPozos
 
-    Dim conexionsql As New SqlConnection("Data Source='MARCOS-LAPTOP\PLEASEWORK'; Initial Catalog='db_agua_potable'; Integrated security=true")
+    Dim conexionsql As New SqlConnection(stringConnection())
 
     Private Sub cbPozo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbPozo.SelectedIndexChanged
         Dim r As String = String.Format("SELECT * FROM Pozos WHERE ubicacion='{0}'", cbPozo.Text)
