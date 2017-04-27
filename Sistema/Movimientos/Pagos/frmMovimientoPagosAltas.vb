@@ -742,13 +742,22 @@ Public Class txtBuscarEmpleado
         If Not txtCuentaUltimoM.Text.Equals("") Then
             If CInt(txtCuentaUltimoM.Text) = 0 Then
                 combitoMesInicial.SelectedIndex = 0
+                combitoMesInicial.Enabled = True
+
             Else
                 If CInt(txtCuentaUltimoM.Text = 12) Then
                     combitoMesInicial.SelectedIndex = 0
+                    combitoMesInicial.Enabled = True
+
                 Else
                     combitoMesInicial.SelectedIndex = txtCuentaUltimoM.Text
+                    combitoMesInicial.Enabled = False
+
                 End If
+
+
             End If
+
         End If
     End Sub
 End Class

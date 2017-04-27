@@ -1220,8 +1220,8 @@ Partial Class txtBuscarEmpleado
         Me.Controls.Add(Me.panelTipoPago)
         Me.Controls.Add(Me.panelDatosCliente)
         Me.Controls.Add(Me.panelRejillaCuenta)
-        Me.Controls.Add(Me.panelServiciosAtendidos)
         Me.Controls.Add(Me.panelPagoAgua)
+        Me.Controls.Add(Me.panelServiciosAtendidos)
         Me.Name = "txtBuscarEmpleado"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Pagos - Altas"
