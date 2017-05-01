@@ -121,6 +121,13 @@ Public Class frmMovimientoActividadPozos
         Me.Dispose()
     End Sub
 
+    Private Sub frmMovimientoActividadPozos_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        conexionsql.Close()
+        Me.Dispose()
+    End Sub
+
+
+
     Private Sub FillDataGrid(comando As SqlCommand, lector As SqlDataReader)
         dgActividadPozos.Rows.Clear()
         'CARGA DE DATOS EN dgActividadPozos--------------------------!
@@ -132,4 +139,6 @@ Public Class frmMovimientoActividadPozos
         lector.Close()
         '------------------------------------------------------------!
     End Sub
+
+
 End Class

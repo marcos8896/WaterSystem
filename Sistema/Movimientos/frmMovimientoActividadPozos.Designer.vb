@@ -272,7 +272,6 @@ Partial Class frmMovimientoActividadPozos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(696, 416)
-        Me.ControlBox = False
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnGrabar)
         Me.Controls.Add(Me.btnNuevo)

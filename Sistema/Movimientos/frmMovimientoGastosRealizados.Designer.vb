@@ -154,7 +154,7 @@ Partial Class frmMovimientoGastosRealizados
         Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.cbEmpleado)
-        Me.Panel2.Location = New System.Drawing.Point(12, 234)
+        Me.Panel2.Location = New System.Drawing.Point(12, 210)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(355, 115)
         Me.Panel2.TabIndex = 7
@@ -176,7 +176,7 @@ Partial Class frmMovimientoGastosRealizados
         Me.Panel3.Controls.Add(Me.Label8)
         Me.Panel3.Location = New System.Drawing.Point(12, 12)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(813, 216)
+        Me.Panel3.Size = New System.Drawing.Size(813, 192)
         Me.Panel3.TabIndex = 1
         '
         'txtImporte
@@ -275,7 +275,7 @@ Partial Class frmMovimientoGastosRealizados
         '
         'txtObservaciones
         '
-        Me.txtObservaciones.Location = New System.Drawing.Point(11, 158)
+        Me.txtObservaciones.Location = New System.Drawing.Point(11, 129)
         Me.txtObservaciones.Multiline = True
         Me.txtObservaciones.Name = "txtObservaciones"
         Me.txtObservaciones.ReadOnly = True
@@ -286,7 +286,7 @@ Partial Class frmMovimientoGastosRealizados
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(358, 139)
+        Me.Label8.Location = New System.Drawing.Point(358, 110)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(103, 16)
         Me.Label8.TabIndex = 35
@@ -295,7 +295,7 @@ Partial Class frmMovimientoGastosRealizados
         'btnSalir
         '
         Me.btnSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSalir.Location = New System.Drawing.Point(485, 547)
+        Me.btnSalir.Location = New System.Drawing.Point(524, 520)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(174, 25)
         Me.btnSalir.TabIndex = 16
@@ -305,7 +305,7 @@ Partial Class frmMovimientoGastosRealizados
         'btnGrabar
         '
         Me.btnGrabar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGrabar.Location = New System.Drawing.Point(289, 547)
+        Me.btnGrabar.Location = New System.Drawing.Point(328, 520)
         Me.btnGrabar.Name = "btnGrabar"
         Me.btnGrabar.Size = New System.Drawing.Size(174, 25)
         Me.btnGrabar.TabIndex = 15
@@ -315,7 +315,7 @@ Partial Class frmMovimientoGastosRealizados
         'btnNuevo
         '
         Me.btnNuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNuevo.Location = New System.Drawing.Point(90, 547)
+        Me.btnNuevo.Location = New System.Drawing.Point(129, 520)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(174, 25)
         Me.btnNuevo.TabIndex = 0
@@ -326,7 +326,7 @@ Partial Class frmMovimientoGastosRealizados
         '
         Me.dgGastosRealizados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgGastosRealizados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idGastoR, Me.Fecha, Me.idEmpleado, Me.Empleado, Me.Concepto, Me.Importe, Me.Observaciones})
-        Me.dgGastosRealizados.Location = New System.Drawing.Point(12, 367)
+        Me.dgGastosRealizados.Location = New System.Drawing.Point(12, 331)
         Me.dgGastosRealizados.Name = "dgGastosRealizados"
         Me.dgGastosRealizados.ReadOnly = True
         Me.dgGastosRealizados.Size = New System.Drawing.Size(813, 169)
@@ -387,7 +387,7 @@ Partial Class frmMovimientoGastosRealizados
         Me.panelBusqueda.Controls.Add(Me.rbEmpleado)
         Me.panelBusqueda.Controls.Add(Me.rbConcepto)
         Me.panelBusqueda.Controls.Add(Me.rbFecha)
-        Me.panelBusqueda.Location = New System.Drawing.Point(373, 234)
+        Me.panelBusqueda.Location = New System.Drawing.Point(373, 210)
         Me.panelBusqueda.Name = "panelBusqueda"
         Me.panelBusqueda.Size = New System.Drawing.Size(452, 115)
         Me.panelBusqueda.TabIndex = 8
@@ -467,7 +467,7 @@ Partial Class frmMovimientoGastosRealizados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(839, 585)
+        Me.ClientSize = New System.Drawing.Size(839, 557)
         Me.Controls.Add(Me.panelBusqueda)
         Me.Controls.Add(Me.dgGastosRealizados)
         Me.Controls.Add(Me.btnSalir)
