@@ -199,4 +199,22 @@ Public Class frmMain
         frmReporte.Show()
         CONEXION.Close()
     End Sub
+
+    Private Sub tsmiReportesMaterialPorExistencia_Click(sender As Object, e As EventArgs) Handles tsmiReportesMaterialPorExistencia.Click
+        Dim CONEXION As New SqlConnection(stringConnection())
+        Dim cmd As New SqlCommand("REPORTEMATERIALPOREXISTENCIA", CONEXION)
+        cmd.CommandType = CommandType.StoredProcedure
+        Dim adaptador As New SqlDataAdapter(cmd)
+        Dim data As New DataSet
+        adaptador.Fill(data)
+        data.DataSetName = "ReporteMaterialPorExistencia"
+        Dim reportes As New ReportDataSource("ReporteMaterialPorExistencia", data.Tables(0))
+        frmReporte.reportViewer.LocalReport.DataSources.Clear()
+        frmReporte.reportViewer.LocalReport.DataSources.Add(reportes)
+        frmReporte.reportViewer.LocalReport.ReportPath =
+        "C:\SistemaAguaPotable\System\WaterSystem\Sistema\Reportes\ReporteMaterialPorExistencia.rdlc"
+        frmReporte.reportViewer.RefreshReport()
+        frmReporte.Show()
+        CONEXION.Close()
+    End Sub
 End Class
