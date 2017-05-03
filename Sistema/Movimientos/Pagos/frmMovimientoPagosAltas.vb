@@ -190,6 +190,9 @@ Public Class txtBuscarEmpleado
             txtCuentaCalle.Text = row.Cells(3).Value
             txtCuentaUltimoA.Text = row.Cells(5).Value
             txtCuentaUltimoM.Text = row.Cells(6).Value
+
+            dgDatosCuentas.ClearSelection()
+            dgDatosCuentas.CurrentRow.Selected = True
         End If
 
     End Sub

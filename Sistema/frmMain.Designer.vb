@@ -51,12 +51,19 @@ Partial Class frmMain
         Me.tsmiPagos = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiPagosAltas = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiPagosConsultaIndividual = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiReportes = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiReportesCuentas = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiReportesCalles = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiReportesEmpleados = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiReportesGastos = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiReportesTarifas = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiReportesPozos = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuPrincipal.SuspendLayout()
         Me.SuspendLayout()
         '
         'menuPrincipal
         '
-        Me.menuPrincipal.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiArchivo, Me.tsmiCatalogos, Me.tsmiMovimientos})
+        Me.menuPrincipal.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiArchivo, Me.tsmiCatalogos, Me.tsmiMovimientos, Me.tsmiReportes})
         Me.menuPrincipal.Location = New System.Drawing.Point(0, 0)
         Me.menuPrincipal.Name = "menuPrincipal"
         Me.menuPrincipal.Size = New System.Drawing.Size(441, 24)
@@ -86,61 +93,61 @@ Partial Class frmMain
         'tsmiCatalogosCalles
         '
         Me.tsmiCatalogosCalles.Name = "tsmiCatalogosCalles"
-        Me.tsmiCatalogosCalles.Size = New System.Drawing.Size(139, 22)
+        Me.tsmiCatalogosCalles.Size = New System.Drawing.Size(152, 22)
         Me.tsmiCatalogosCalles.Text = "Calles"
         '
         'tsmiCatalogosCuentas
         '
         Me.tsmiCatalogosCuentas.Name = "tsmiCatalogosCuentas"
-        Me.tsmiCatalogosCuentas.Size = New System.Drawing.Size(139, 22)
+        Me.tsmiCatalogosCuentas.Size = New System.Drawing.Size(152, 22)
         Me.tsmiCatalogosCuentas.Text = "Cuentas"
         '
         'tsmiCatalogosMateriales
         '
         Me.tsmiCatalogosMateriales.Name = "tsmiCatalogosMateriales"
-        Me.tsmiCatalogosMateriales.Size = New System.Drawing.Size(139, 22)
+        Me.tsmiCatalogosMateriales.Size = New System.Drawing.Size(152, 22)
         Me.tsmiCatalogosMateriales.Text = "Materiales"
         '
         'tsmiCatalogosEmpleados
         '
         Me.tsmiCatalogosEmpleados.Name = "tsmiCatalogosEmpleados"
-        Me.tsmiCatalogosEmpleados.Size = New System.Drawing.Size(139, 22)
+        Me.tsmiCatalogosEmpleados.Size = New System.Drawing.Size(152, 22)
         Me.tsmiCatalogosEmpleados.Text = "Empleados"
         '
         'tsmiCatalogosGastos
         '
         Me.tsmiCatalogosGastos.Name = "tsmiCatalogosGastos"
-        Me.tsmiCatalogosGastos.Size = New System.Drawing.Size(139, 22)
+        Me.tsmiCatalogosGastos.Size = New System.Drawing.Size(152, 22)
         Me.tsmiCatalogosGastos.Text = "Gastos"
         '
         'tsmiCatalogosTarifas
         '
         Me.tsmiCatalogosTarifas.Name = "tsmiCatalogosTarifas"
-        Me.tsmiCatalogosTarifas.Size = New System.Drawing.Size(139, 22)
+        Me.tsmiCatalogosTarifas.Size = New System.Drawing.Size(152, 22)
         Me.tsmiCatalogosTarifas.Text = "Tarifas"
         '
         'tsmiCatalogosPozos
         '
         Me.tsmiCatalogosPozos.Name = "tsmiCatalogosPozos"
-        Me.tsmiCatalogosPozos.Size = New System.Drawing.Size(139, 22)
+        Me.tsmiCatalogosPozos.Size = New System.Drawing.Size(152, 22)
         Me.tsmiCatalogosPozos.Text = "Pozos"
         '
         'tsmiCatalogosServicios
         '
         Me.tsmiCatalogosServicios.Name = "tsmiCatalogosServicios"
-        Me.tsmiCatalogosServicios.Size = New System.Drawing.Size(139, 22)
+        Me.tsmiCatalogosServicios.Size = New System.Drawing.Size(152, 22)
         Me.tsmiCatalogosServicios.Text = "Servicios"
         '
         'tsmiCatalogosProveedores
         '
         Me.tsmiCatalogosProveedores.Name = "tsmiCatalogosProveedores"
-        Me.tsmiCatalogosProveedores.Size = New System.Drawing.Size(139, 22)
+        Me.tsmiCatalogosProveedores.Size = New System.Drawing.Size(152, 22)
         Me.tsmiCatalogosProveedores.Text = "Proveedores"
         '
         'tsmiCatalogosSituaciones
         '
         Me.tsmiCatalogosSituaciones.Name = "tsmiCatalogosSituaciones"
-        Me.tsmiCatalogosSituaciones.Size = New System.Drawing.Size(139, 22)
+        Me.tsmiCatalogosSituaciones.Size = New System.Drawing.Size(152, 22)
         Me.tsmiCatalogosSituaciones.Text = "Situaciones"
         '
         'tsmiMovimientos
@@ -238,6 +245,49 @@ Partial Class frmMain
         Me.tsmiPagosConsultaIndividual.Size = New System.Drawing.Size(176, 22)
         Me.tsmiPagosConsultaIndividual.Text = "Consulta Individual"
         '
+        'tsmiReportes
+        '
+        Me.tsmiReportes.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiReportesCuentas, Me.tsmiReportesCalles, Me.tsmiReportesEmpleados, Me.tsmiReportesGastos, Me.tsmiReportesTarifas, Me.tsmiReportesPozos})
+        Me.tsmiReportes.Name = "tsmiReportes"
+        Me.tsmiReportes.Size = New System.Drawing.Size(65, 20)
+        Me.tsmiReportes.Text = "Reportes"
+        '
+        'tsmiReportesCuentas
+        '
+        Me.tsmiReportesCuentas.Name = "tsmiReportesCuentas"
+        Me.tsmiReportesCuentas.Size = New System.Drawing.Size(152, 22)
+        Me.tsmiReportesCuentas.Text = "Cuentas"
+        '
+        'tsmiReportesCalles
+        '
+        Me.tsmiReportesCalles.Name = "tsmiReportesCalles"
+        Me.tsmiReportesCalles.Size = New System.Drawing.Size(152, 22)
+        Me.tsmiReportesCalles.Text = "Calles"
+        '
+        'tsmiReportesEmpleados
+        '
+        Me.tsmiReportesEmpleados.Name = "tsmiReportesEmpleados"
+        Me.tsmiReportesEmpleados.Size = New System.Drawing.Size(152, 22)
+        Me.tsmiReportesEmpleados.Text = "Empleados"
+        '
+        'tsmiReportesGastos
+        '
+        Me.tsmiReportesGastos.Name = "tsmiReportesGastos"
+        Me.tsmiReportesGastos.Size = New System.Drawing.Size(152, 22)
+        Me.tsmiReportesGastos.Text = "Gastos"
+        '
+        'tsmiReportesTarifas
+        '
+        Me.tsmiReportesTarifas.Name = "tsmiReportesTarifas"
+        Me.tsmiReportesTarifas.Size = New System.Drawing.Size(152, 22)
+        Me.tsmiReportesTarifas.Text = "Tarifas"
+        '
+        'tsmiReportesPozos
+        '
+        Me.tsmiReportesPozos.Name = "tsmiReportesPozos"
+        Me.tsmiReportesPozos.Size = New System.Drawing.Size(152, 22)
+        Me.tsmiReportesPozos.Text = "Pozos"
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -284,4 +334,11 @@ Partial Class frmMain
     Friend WithEvents tsmiPagos As ToolStripMenuItem
     Friend WithEvents tsmiPagosAltas As ToolStripMenuItem
     Friend WithEvents tsmiPagosConsultaIndividual As ToolStripMenuItem
+    Friend WithEvents tsmiReportes As ToolStripMenuItem
+    Friend WithEvents tsmiReportesCuentas As ToolStripMenuItem
+    Friend WithEvents tsmiReportesCalles As ToolStripMenuItem
+    Friend WithEvents tsmiReportesEmpleados As ToolStripMenuItem
+    Friend WithEvents tsmiReportesGastos As ToolStripMenuItem
+    Friend WithEvents tsmiReportesTarifas As ToolStripMenuItem
+    Friend WithEvents tsmiReportesPozos As ToolStripMenuItem
 End Class
