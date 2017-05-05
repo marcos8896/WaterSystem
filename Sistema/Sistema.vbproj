@@ -223,10 +223,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Reportes\CuentasPorCalles\frmParametroCuenta.Designer.vb">
+    <Compile Include="Reportes\FormsParaParametros\frmParametroCuenta.Designer.vb">
       <DependentUpon>frmParametroCuenta.vb</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\CuentasPorCalles\frmParametroCuenta.vb">
+    <Compile Include="Reportes\FormsParaParametros\frmParametroCuenta.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\frmReporte.Designer.vb">
@@ -306,7 +306,7 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\CuentasPorCalles\frmParametroCuenta.resx">
+    <EmbeddedResource Include="Reportes\FormsParaParametros\frmParametroCuenta.resx">
       <DependentUpon>frmParametroCuenta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmReporte.resx">
@@ -314,6 +314,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReporteCalles.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteCuentas.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteCuentasDeudoras.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteCuentasPorCalle.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteEmpleados.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteGastos.rdlc" />

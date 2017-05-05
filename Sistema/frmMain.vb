@@ -257,4 +257,22 @@ Public Class frmMain
         frmReporte.Show()
         CONEXION.Close()
     End Sub
+
+    Private Sub tsmiReportesCuentasDeudoras_Click(sender As Object, e As EventArgs) Handles tsmiReportesCuentasDeudoras.Click
+        Dim CONEXION As New SqlConnection(stringConnection())
+        Dim cmd As New SqlCommand("REPORTECUENTASDEUDORAS", CONEXION)
+        cmd.CommandType = CommandType.StoredProcedure
+        Dim adaptador As New SqlDataAdapter(cmd)
+        Dim data As New DataSet
+        adaptador.Fill(data)
+        data.DataSetName = "ReporteCuentasDeudoras"
+        Dim reportes As New ReportDataSource("ReporteCuentasDeudoras", data.Tables(0))
+        frmReporte.reportViewer.LocalReport.DataSources.Clear()
+        frmReporte.reportViewer.LocalReport.DataSources.Add(reportes)
+        frmReporte.reportViewer.LocalReport.ReportPath =
+        "C:\SistemaAguaPotable\System\WaterSystem\Sistema\Reportes\ReporteCuentasDeudoras.rdlc"
+        frmReporte.reportViewer.RefreshReport()
+        frmReporte.Show()
+        CONEXION.Close()
+    End Sub
 End Class
