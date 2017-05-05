@@ -6,7 +6,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.75167cm</Width>
+              <Width>2.5cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -23,7 +23,12 @@
                           <TextRuns>
                             <TextRun>
                               <Value>INFRA</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -32,9 +37,10 @@
                       <rd:DefaultName>Textbox2</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#7292cc</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>#4c68a2</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -58,7 +64,10 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!INFRA.Value)</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <Color>#4d4d4d</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -67,7 +76,7 @@
                       <rd:DefaultName>INFRA</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#e5e5e5</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -91,7 +100,7 @@
           <TablixMembers>
             <TablixMember>
               <TablixHeader>
-                <Size>2.75167cm</Size>
+                <Size>1.97083cm</Size>
                 <CellContents>
                   <Textbox Name="Textbox11">
                     <CanGrow>true</CanGrow>
@@ -101,7 +110,12 @@
                         <TextRuns>
                           <TextRun>
                             <Value>id Tarifa</Value>
-                            <Style />
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontSize>11pt</FontSize>
+                              <FontWeight>Bold</FontWeight>
+                              <Color>White</Color>
+                            </Style>
                           </TextRun>
                         </TextRuns>
                         <Style />
@@ -110,9 +124,10 @@
                     <rd:DefaultName>Textbox11</rd:DefaultName>
                     <Style>
                       <Border>
-                        <Color>LightGrey</Color>
+                        <Color>#7292cc</Color>
                         <Style>Solid</Style>
                       </Border>
+                      <BackgroundColor>#4c68a2</BackgroundColor>
                       <PaddingLeft>2pt</PaddingLeft>
                       <PaddingRight>2pt</PaddingRight>
                       <PaddingTop>2pt</PaddingTop>
@@ -124,7 +139,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>2.75167cm</Size>
+                    <Size>2.5cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox9">
                         <CanGrow>true</CanGrow>
@@ -134,7 +149,12 @@
                             <TextRuns>
                               <TextRun>
                                 <Value>anio</Value>
-                                <Style />
+                                <Style>
+                                  <FontFamily>Tahoma</FontFamily>
+                                  <FontSize>11pt</FontSize>
+                                  <FontWeight>Bold</FontWeight>
+                                  <Color>White</Color>
+                                </Style>
                               </TextRun>
                             </TextRuns>
                             <Style />
@@ -143,9 +163,10 @@
                         <rd:DefaultName>Textbox9</rd:DefaultName>
                         <Style>
                           <Border>
-                            <Color>LightGrey</Color>
+                            <Color>#7292cc</Color>
                             <Style>Solid</Style>
                           </Border>
+                          <BackgroundColor>#4c68a2</BackgroundColor>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -157,7 +178,7 @@
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>2.75167cm</Size>
+                        <Size>2.5cm</Size>
                         <CellContents>
                           <Textbox Name="Textbox7">
                             <CanGrow>true</CanGrow>
@@ -167,7 +188,12 @@
                                 <TextRuns>
                                   <TextRun>
                                     <Value>CF</Value>
-                                    <Style />
+                                    <Style>
+                                      <FontFamily>Tahoma</FontFamily>
+                                      <FontSize>11pt</FontSize>
+                                      <FontWeight>Bold</FontWeight>
+                                      <Color>White</Color>
+                                    </Style>
                                   </TextRun>
                                 </TextRuns>
                                 <Style />
@@ -176,9 +202,10 @@
                             <rd:DefaultName>Textbox7</rd:DefaultName>
                             <Style>
                               <Border>
-                                <Color>LightGrey</Color>
+                                <Color>#7292cc</Color>
                                 <Style>Solid</Style>
                               </Border>
+                              <BackgroundColor>#4c68a2</BackgroundColor>
                               <PaddingLeft>2pt</PaddingLeft>
                               <PaddingRight>2pt</PaddingRight>
                               <PaddingTop>2pt</PaddingTop>
@@ -190,7 +217,7 @@
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>2.75167cm</Size>
+                            <Size>2.5cm</Size>
                             <CellContents>
                               <Textbox Name="Textbox5">
                                 <CanGrow>true</CanGrow>
@@ -200,7 +227,12 @@
                                     <TextRuns>
                                       <TextRun>
                                         <Value>recargos</Value>
-                                        <Style />
+                                        <Style>
+                                          <FontFamily>Tahoma</FontFamily>
+                                          <FontSize>11pt</FontSize>
+                                          <FontWeight>Bold</FontWeight>
+                                          <Color>White</Color>
+                                        </Style>
                                       </TextRun>
                                     </TextRuns>
                                     <Style />
@@ -209,9 +241,10 @@
                                 <rd:DefaultName>Textbox5</rd:DefaultName>
                                 <Style>
                                   <Border>
-                                    <Color>LightGrey</Color>
+                                    <Color>#7292cc</Color>
                                     <Style>Solid</Style>
                                   </Border>
+                                  <BackgroundColor>#4c68a2</BackgroundColor>
                                   <PaddingLeft>2pt</PaddingLeft>
                                   <PaddingRight>2pt</PaddingRight>
                                   <PaddingTop>2pt</PaddingTop>
@@ -223,7 +256,7 @@
                           <TablixMembers>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>2.75167cm</Size>
+                                <Size>2.5cm</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox3">
                                     <CanGrow>true</CanGrow>
@@ -233,7 +266,12 @@
                                         <TextRuns>
                                           <TextRun>
                                             <Value>TAR</Value>
-                                            <Style />
+                                            <Style>
+                                              <FontFamily>Tahoma</FontFamily>
+                                              <FontSize>11pt</FontSize>
+                                              <FontWeight>Bold</FontWeight>
+                                              <Color>White</Color>
+                                            </Style>
                                           </TextRun>
                                         </TextRuns>
                                         <Style />
@@ -242,9 +280,10 @@
                                     <rd:DefaultName>Textbox3</rd:DefaultName>
                                     <Style>
                                       <Border>
-                                        <Color>LightGrey</Color>
+                                        <Color>#7292cc</Color>
                                         <Style>Solid</Style>
                                       </Border>
+                                      <BackgroundColor>#4c68a2</BackgroundColor>
                                       <PaddingLeft>2pt</PaddingLeft>
                                       <PaddingRight>2pt</PaddingRight>
                                       <PaddingTop>2pt</PaddingTop>
@@ -277,7 +316,7 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>2.75167cm</Size>
+                <Size>1.97083cm</Size>
                 <CellContents>
                   <Textbox Name="idTarifa">
                     <CanGrow>true</CanGrow>
@@ -287,7 +326,11 @@
                         <TextRuns>
                           <TextRun>
                             <Value>=Fields!idTarifa.Value</Value>
-                            <Style />
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontWeight>Bold</FontWeight>
+                              <Color>#465678</Color>
+                            </Style>
                           </TextRun>
                         </TextRuns>
                         <Style />
@@ -296,9 +339,10 @@
                     <rd:DefaultName>idTarifa</rd:DefaultName>
                     <Style>
                       <Border>
-                        <Color>LightGrey</Color>
+                        <Color>#c6daf8</Color>
                         <Style>Solid</Style>
                       </Border>
+                      <BackgroundColor>#9eb6e4</BackgroundColor>
                       <PaddingLeft>2pt</PaddingLeft>
                       <PaddingRight>2pt</PaddingRight>
                       <PaddingTop>2pt</PaddingTop>
@@ -320,7 +364,7 @@
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>2.75167cm</Size>
+                    <Size>2.5cm</Size>
                     <CellContents>
                       <Textbox Name="anio">
                         <CanGrow>true</CanGrow>
@@ -330,7 +374,11 @@
                             <TextRuns>
                               <TextRun>
                                 <Value>=Fields!anio.Value</Value>
-                                <Style />
+                                <Style>
+                                  <FontFamily>Tahoma</FontFamily>
+                                  <FontWeight>Bold</FontWeight>
+                                  <Color>#4c68a2</Color>
+                                </Style>
                               </TextRun>
                             </TextRuns>
                             <Style />
@@ -339,9 +387,10 @@
                         <rd:DefaultName>anio</rd:DefaultName>
                         <Style>
                           <Border>
-                            <Color>LightGrey</Color>
+                            <Color>#e6eefc</Color>
                             <Style>Solid</Style>
                           </Border>
+                          <BackgroundColor>#c6daf8</BackgroundColor>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -363,7 +412,7 @@
                         </SortExpression>
                       </SortExpressions>
                       <TablixHeader>
-                        <Size>2.75167cm</Size>
+                        <Size>2.5cm</Size>
                         <CellContents>
                           <Textbox Name="CF">
                             <CanGrow>true</CanGrow>
@@ -373,7 +422,11 @@
                                 <TextRuns>
                                   <TextRun>
                                     <Value>=Fields!CF.Value</Value>
-                                    <Style />
+                                    <Style>
+                                      <FontFamily>Tahoma</FontFamily>
+                                      <FontWeight>Bold</FontWeight>
+                                      <Color>#4c68a2</Color>
+                                    </Style>
                                   </TextRun>
                                 </TextRuns>
                                 <Style />
@@ -382,9 +435,10 @@
                             <rd:DefaultName>CF</rd:DefaultName>
                             <Style>
                               <Border>
-                                <Color>LightGrey</Color>
+                                <Color>White</Color>
                                 <Style>Solid</Style>
                               </Border>
+                              <BackgroundColor>#e6eefc</BackgroundColor>
                               <PaddingLeft>2pt</PaddingLeft>
                               <PaddingRight>2pt</PaddingRight>
                               <PaddingTop>2pt</PaddingTop>
@@ -406,7 +460,7 @@
                             </SortExpression>
                           </SortExpressions>
                           <TablixHeader>
-                            <Size>2.75167cm</Size>
+                            <Size>2.5cm</Size>
                             <CellContents>
                               <Textbox Name="recargos">
                                 <CanGrow>true</CanGrow>
@@ -416,7 +470,11 @@
                                     <TextRuns>
                                       <TextRun>
                                         <Value>=Fields!recargos.Value</Value>
-                                        <Style />
+                                        <Style>
+                                          <FontFamily>Tahoma</FontFamily>
+                                          <FontWeight>Bold</FontWeight>
+                                          <Color>#4c68a2</Color>
+                                        </Style>
                                       </TextRun>
                                     </TextRuns>
                                     <Style />
@@ -425,9 +483,10 @@
                                 <rd:DefaultName>recargos</rd:DefaultName>
                                 <Style>
                                   <Border>
-                                    <Color>LightGrey</Color>
+                                    <Color>White</Color>
                                     <Style>Solid</Style>
                                   </Border>
+                                  <BackgroundColor>#e6eefc</BackgroundColor>
                                   <PaddingLeft>2pt</PaddingLeft>
                                   <PaddingRight>2pt</PaddingRight>
                                   <PaddingTop>2pt</PaddingTop>
@@ -449,7 +508,7 @@
                                 </SortExpression>
                               </SortExpressions>
                               <TablixHeader>
-                                <Size>2.75167cm</Size>
+                                <Size>2.5cm</Size>
                                 <CellContents>
                                   <Textbox Name="TAR">
                                     <CanGrow>true</CanGrow>
@@ -459,7 +518,11 @@
                                         <TextRuns>
                                           <TextRun>
                                             <Value>=Fields!TAR.Value</Value>
-                                            <Style />
+                                            <Style>
+                                              <FontFamily>Tahoma</FontFamily>
+                                              <FontWeight>Bold</FontWeight>
+                                              <Color>#4c68a2</Color>
+                                            </Style>
                                           </TextRun>
                                         </TextRuns>
                                         <Style />
@@ -468,9 +531,10 @@
                                     <rd:DefaultName>TAR</rd:DefaultName>
                                     <Style>
                                       <Border>
-                                        <Color>LightGrey</Color>
+                                        <Color>White</Color>
                                         <Style>Solid</Style>
                                       </Border>
+                                      <BackgroundColor>#e6eefc</BackgroundColor>
                                       <PaddingLeft>2pt</PaddingLeft>
                                       <PaddingRight>2pt</PaddingRight>
                                       <PaddingTop>2pt</PaddingTop>
@@ -494,14 +558,46 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>ReporteTarifas</DataSetName>
+        <Top>1.21708cm</Top>
+        <Left>0.74083cm</Left>
         <Height>1.2cm</Height>
-        <Width>16.51cm</Width>
+        <Width>14.47083cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
+      <Textbox Name="Textbox13">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>REPORTE DE TARIFAS</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox13</rd:DefaultName>
+        <Top>0.44069cm</Top>
+        <Left>5.17167cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.04cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>2in</Height>
     <Style />
@@ -524,7 +620,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>276cce1d-022c-4b23-97fa-ab20f0a5bdeb</rd:DataSourceID>
+      <rd:DataSourceID>5bc9088a-4021-4286-be07-859d2b475f59</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -562,13 +658,13 @@
       <rd:DataSetInfo>
         <rd:DataSetName>DataSetSistema</rd:DataSetName>
         <rd:SchemaPath>C:\SistemaAguaPotable\System\WaterSystem\Sistema\DataSetSistema.xsd</rd:SchemaPath>
-        <rd:TableName>Tarifas</rd:TableName>
+        <rd:TableName>REPORTETARIFAS</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>TarifasTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>REPORTETARIFASTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>8ff90bb7-bf7a-448b-ad6d-e0302bf67799</rd:ReportID>
+  <rd:ReportID>fdf68a40-6326-4766-b459-f3c1370f8c12</rd:ReportID>
 </Report>

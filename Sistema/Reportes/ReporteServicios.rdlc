@@ -6,7 +6,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>8.02979cm</Width>
+              <Width>6.12479cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -22,7 +22,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>concepto</Value>
+                              <Value>descripcion</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -56,14 +56,14 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="concepto">
+                    <Textbox Name="descripcion">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!concepto.Value</Value>
+                              <Value>=Fields!descripcion.Value</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <Color>#4d4d4d</Color>
@@ -73,7 +73,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>concepto</rd:DefaultName>
+                      <rd:DefaultName>descripcion</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>#e5e5e5</Color>
@@ -109,7 +109,7 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>id Gasto</Value>
+                            <Value>id Servicio</Value>
                             <Style>
                               <FontFamily>Tahoma</FontFamily>
                               <FontSize>11pt</FontSize>
@@ -142,27 +142,27 @@
               <KeepWithGroup>After</KeepWithGroup>
             </TablixMember>
             <TablixMember>
-              <Group Name="idGasto">
+              <Group Name="idServicio">
                 <GroupExpressions>
-                  <GroupExpression>=Fields!idGasto.Value</GroupExpression>
+                  <GroupExpression>=Fields!idServicio.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
               <SortExpressions>
                 <SortExpression>
-                  <Value>=Fields!idGasto.Value</Value>
+                  <Value>=Fields!idServicio.Value</Value>
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
                 <Size>2.5cm</Size>
                 <CellContents>
-                  <Textbox Name="idGasto">
+                  <Textbox Name="idServicio">
                     <CanGrow>true</CanGrow>
                     <KeepTogether>true</KeepTogether>
                     <Paragraphs>
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>=Fields!idGasto.Value</Value>
+                            <Value>=Fields!idServicio.Value</Value>
                             <Style>
                               <FontFamily>Tahoma</FontFamily>
                               <FontWeight>Bold</FontWeight>
@@ -173,7 +173,7 @@
                         <Style />
                       </Paragraph>
                     </Paragraphs>
-                    <rd:DefaultName>idGasto</rd:DefaultName>
+                    <rd:DefaultName>idServicio</rd:DefaultName>
                     <Style>
                       <Border>
                         <Color>#c6daf8</Color>
@@ -196,36 +196,36 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>ReporteGastos</DataSetName>
-        <Top>1.6538cm</Top>
-        <Left>2.04581cm</Left>
+        <DataSetName>ReportesServicios</DataSetName>
+        <Top>1.85208cm</Top>
+        <Left>4.15396cm</Left>
         <Height>1.2cm</Height>
-        <Width>10.52979cm</Width>
+        <Width>8.62479cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
-      <Textbox Name="Textbox6">
+      <Textbox Name="Textbox5">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>REPORTE DE GASTOS</Value>
+                <Value>REPORTE DE SERVICIOS</Value>
                 <Style />
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox6</rd:DefaultName>
-        <Top>0.69582cm</Top>
-        <Left>2.58136cm</Left>
+        <rd:DefaultName>Textbox5</rd:DefaultName>
+        <Top>0.57891cm</Top>
+        <Left>4.70641cm</Left>
         <Height>0.6cm</Height>
-        <Width>7.06178cm</Width>
+        <Width>6.57458cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -259,35 +259,35 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>3ff0ab6f-35bf-4a58-8472-c68036594f71</rd:DataSourceID>
+      <rd:DataSourceID>8996b8d3-75cc-462e-bfd6-f46de0898b37</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="ReporteGastos">
+    <DataSet Name="ReportesServicios">
       <Query>
         <DataSourceName>DataSetSistema</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="idGasto">
-          <DataField>idGasto</DataField>
+        <Field Name="idServicio">
+          <DataField>idServicio</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="concepto">
-          <DataField>concepto</DataField>
+        <Field Name="descripcion">
+          <DataField>descripcion</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSetSistema</rd:DataSetName>
-        <rd:SchemaPath>C:\SistemaAguaPotable\System\WaterSystem\Sistema\DataSetSistema.xsd</rd:SchemaPath>
-        <rd:TableName>REPORTEGASTOS</rd:TableName>
+        <rd:SchemaPath>C:\SistemaAguaPotable\System\WaterSystem - copia\Sistema\DataSetSistema.xsd</rd:SchemaPath>
+        <rd:TableName>REPORTESERVICIOS</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>REPORTEGASTOSTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>REPORTESERVICIOSTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>f789511f-430f-46c0-87bd-0d5b399c879a</rd:ReportID>
+  <rd:ReportID>36af5875-5a45-42f1-b7c9-4df123c4f606</rd:ReportID>
 </Report>

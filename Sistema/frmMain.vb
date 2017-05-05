@@ -135,14 +135,14 @@ Public Class frmMain
         Dim adaptador As New SqlDataAdapter(cmd)
         Dim data As New DataSet
         adaptador.Fill(data)
-        data.DataSetName = "ReporteEmpleados"
-        Dim reportes As New ReportDataSource("ReporteEmpleados", data.Tables(0))
+        data.DataSetName = "DataSet1"
+        Dim reportes As New ReportDataSource("DataSet1", data.Tables(0))
         frmReporte.reportViewer.LocalReport.DataSources.Clear()
         frmReporte.reportViewer.LocalReport.DataSources.Add(reportes)
         frmReporte.reportViewer.LocalReport.ReportPath =
         "C:\SistemaAguaPotable\System\WaterSystem\Sistema\Reportes\ReporteEmpleados.rdlc"
         frmReporte.reportViewer.RefreshReport()
-        frmReporte.Show()
+        frmReporte.ShowDialog()
         CONEXION.Close()
     End Sub
 
@@ -213,6 +213,46 @@ Public Class frmMain
         frmReporte.reportViewer.LocalReport.DataSources.Add(reportes)
         frmReporte.reportViewer.LocalReport.ReportPath =
         "C:\SistemaAguaPotable\System\WaterSystem\Sistema\Reportes\ReporteMaterialPorExistencia.rdlc"
+        frmReporte.reportViewer.RefreshReport()
+        frmReporte.Show()
+        CONEXION.Close()
+    End Sub
+
+    Private Sub tsmiReportesCuentasPorCalle_Click(sender As Object, e As EventArgs) Handles tsmiReportesCuentasPorCalle.Click
+        frmParametroCuenta.ShowDialog()
+    End Sub
+
+    Private Sub tsmiReportesServicios_Click(sender As Object, e As EventArgs) Handles tsmiReportesServicios.Click
+        Dim CONEXION As New SqlConnection(stringConnection())
+        Dim cmd As New SqlCommand("REPORTESERVICIOS", CONEXION)
+        cmd.CommandType = CommandType.StoredProcedure
+        Dim adaptador As New SqlDataAdapter(cmd)
+        Dim data As New DataSet
+        adaptador.Fill(data)
+        data.DataSetName = "ReportesServicios"
+        Dim reportes As New ReportDataSource("ReportesServicios", data.Tables(0))
+        frmReporte.reportViewer.LocalReport.DataSources.Clear()
+        frmReporte.reportViewer.LocalReport.DataSources.Add(reportes)
+        frmReporte.reportViewer.LocalReport.ReportPath =
+        "C:\SistemaAguaPotable\System\WaterSystem\Sistema\Reportes\ReporteServicios.rdlc"
+        frmReporte.reportViewer.RefreshReport()
+        frmReporte.Show()
+        CONEXION.Close()
+    End Sub
+
+    Private Sub tsmiReportesProveedores_Click(sender As Object, e As EventArgs) Handles tsmiReportesProveedores.Click
+        Dim CONEXION As New SqlConnection(stringConnection())
+        Dim cmd As New SqlCommand("REPORTEPROVEEDORES", CONEXION)
+        cmd.CommandType = CommandType.StoredProcedure
+        Dim adaptador As New SqlDataAdapter(cmd)
+        Dim data As New DataSet
+        adaptador.Fill(data)
+        data.DataSetName = "ReporteProveedores"
+        Dim reportes As New ReportDataSource("ReporteProveedores", data.Tables(0))
+        frmReporte.reportViewer.LocalReport.DataSources.Clear()
+        frmReporte.reportViewer.LocalReport.DataSources.Add(reportes)
+        frmReporte.reportViewer.LocalReport.ReportPath =
+        "C:\SistemaAguaPotable\System\WaterSystem\Sistema\Reportes\ReporteProveedores.rdlc"
         frmReporte.reportViewer.RefreshReport()
         frmReporte.Show()
         CONEXION.Close()

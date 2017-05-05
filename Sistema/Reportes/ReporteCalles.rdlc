@@ -6,7 +6,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>3.302cm</Width>
+              <Width>2.50825cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -23,7 +23,12 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Total Casas</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -32,9 +37,10 @@
                       <rd:DefaultName>Textbox2</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#7292cc</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>#4c68a2</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -58,7 +64,10 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!TotalCasas.Value)</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <Color>#4d4d4d</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -67,7 +76,7 @@
                       <rd:DefaultName>TotalCasas</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#e5e5e5</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -91,7 +100,7 @@
           <TablixMembers>
             <TablixMember>
               <TablixHeader>
-                <Size>3.302cm</Size>
+                <Size>1.82033cm</Size>
                 <CellContents>
                   <Textbox Name="Textbox9">
                     <CanGrow>true</CanGrow>
@@ -101,7 +110,12 @@
                         <TextRuns>
                           <TextRun>
                             <Value>id Calle</Value>
-                            <Style />
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontSize>11pt</FontSize>
+                              <FontWeight>Bold</FontWeight>
+                              <Color>White</Color>
+                            </Style>
                           </TextRun>
                         </TextRuns>
                         <Style />
@@ -110,9 +124,10 @@
                     <rd:DefaultName>Textbox9</rd:DefaultName>
                     <Style>
                       <Border>
-                        <Color>LightGrey</Color>
+                        <Color>#7292cc</Color>
                         <Style>Solid</Style>
                       </Border>
+                      <BackgroundColor>#4c68a2</BackgroundColor>
                       <PaddingLeft>2pt</PaddingLeft>
                       <PaddingRight>2pt</PaddingRight>
                       <PaddingTop>2pt</PaddingTop>
@@ -124,7 +139,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>3.302cm</Size>
+                    <Size>6.29179cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox7">
                         <CanGrow>true</CanGrow>
@@ -134,7 +149,12 @@
                             <TextRuns>
                               <TextRun>
                                 <Value>nombre</Value>
-                                <Style />
+                                <Style>
+                                  <FontFamily>Tahoma</FontFamily>
+                                  <FontSize>11pt</FontSize>
+                                  <FontWeight>Bold</FontWeight>
+                                  <Color>White</Color>
+                                </Style>
                               </TextRun>
                             </TextRuns>
                             <Style />
@@ -143,9 +163,10 @@
                         <rd:DefaultName>Textbox7</rd:DefaultName>
                         <Style>
                           <Border>
-                            <Color>LightGrey</Color>
+                            <Color>#7292cc</Color>
                             <Style>Solid</Style>
                           </Border>
+                          <BackgroundColor>#4c68a2</BackgroundColor>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -157,7 +178,7 @@
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>3.302cm</Size>
+                        <Size>5.92137cm</Size>
                         <CellContents>
                           <Textbox Name="Textbox5">
                             <CanGrow>true</CanGrow>
@@ -167,7 +188,12 @@
                                 <TextRuns>
                                   <TextRun>
                                     <Value>colonia</Value>
-                                    <Style />
+                                    <Style>
+                                      <FontFamily>Tahoma</FontFamily>
+                                      <FontSize>11pt</FontSize>
+                                      <FontWeight>Bold</FontWeight>
+                                      <Color>White</Color>
+                                    </Style>
                                   </TextRun>
                                 </TextRuns>
                                 <Style />
@@ -176,9 +202,10 @@
                             <rd:DefaultName>Textbox5</rd:DefaultName>
                             <Style>
                               <Border>
-                                <Color>LightGrey</Color>
+                                <Color>#7292cc</Color>
                                 <Style>Solid</Style>
                               </Border>
+                              <BackgroundColor>#4c68a2</BackgroundColor>
                               <PaddingLeft>2pt</PaddingLeft>
                               <PaddingRight>2pt</PaddingRight>
                               <PaddingTop>2pt</PaddingTop>
@@ -190,7 +217,7 @@
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>3.302cm</Size>
+                            <Size>1.76742cm</Size>
                             <CellContents>
                               <Textbox Name="Textbox3">
                                 <CanGrow>true</CanGrow>
@@ -200,7 +227,12 @@
                                     <TextRuns>
                                       <TextRun>
                                         <Value>CP</Value>
-                                        <Style />
+                                        <Style>
+                                          <FontFamily>Tahoma</FontFamily>
+                                          <FontSize>11pt</FontSize>
+                                          <FontWeight>Bold</FontWeight>
+                                          <Color>White</Color>
+                                        </Style>
                                       </TextRun>
                                     </TextRuns>
                                     <Style />
@@ -209,9 +241,10 @@
                                 <rd:DefaultName>Textbox3</rd:DefaultName>
                                 <Style>
                                   <Border>
-                                    <Color>LightGrey</Color>
+                                    <Color>#7292cc</Color>
                                     <Style>Solid</Style>
                                   </Border>
+                                  <BackgroundColor>#4c68a2</BackgroundColor>
                                   <PaddingLeft>2pt</PaddingLeft>
                                   <PaddingRight>2pt</PaddingRight>
                                   <PaddingTop>2pt</PaddingTop>
@@ -242,7 +275,7 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>3.302cm</Size>
+                <Size>1.82033cm</Size>
                 <CellContents>
                   <Textbox Name="idCalle">
                     <CanGrow>true</CanGrow>
@@ -252,7 +285,11 @@
                         <TextRuns>
                           <TextRun>
                             <Value>=Fields!idCalle.Value</Value>
-                            <Style />
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontWeight>Bold</FontWeight>
+                              <Color>#465678</Color>
+                            </Style>
                           </TextRun>
                         </TextRuns>
                         <Style />
@@ -261,9 +298,10 @@
                     <rd:DefaultName>idCalle</rd:DefaultName>
                     <Style>
                       <Border>
-                        <Color>LightGrey</Color>
+                        <Color>#c6daf8</Color>
                         <Style>Solid</Style>
                       </Border>
+                      <BackgroundColor>#9eb6e4</BackgroundColor>
                       <PaddingLeft>2pt</PaddingLeft>
                       <PaddingRight>2pt</PaddingRight>
                       <PaddingTop>2pt</PaddingTop>
@@ -285,7 +323,7 @@
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>3.302cm</Size>
+                    <Size>6.29179cm</Size>
                     <CellContents>
                       <Textbox Name="nombre">
                         <CanGrow>true</CanGrow>
@@ -295,7 +333,11 @@
                             <TextRuns>
                               <TextRun>
                                 <Value>=Fields!nombre.Value</Value>
-                                <Style />
+                                <Style>
+                                  <FontFamily>Tahoma</FontFamily>
+                                  <FontWeight>Bold</FontWeight>
+                                  <Color>#4c68a2</Color>
+                                </Style>
                               </TextRun>
                             </TextRuns>
                             <Style />
@@ -304,9 +346,10 @@
                         <rd:DefaultName>nombre</rd:DefaultName>
                         <Style>
                           <Border>
-                            <Color>LightGrey</Color>
+                            <Color>#e6eefc</Color>
                             <Style>Solid</Style>
                           </Border>
+                          <BackgroundColor>#c6daf8</BackgroundColor>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -328,7 +371,7 @@
                         </SortExpression>
                       </SortExpressions>
                       <TablixHeader>
-                        <Size>3.302cm</Size>
+                        <Size>5.92137cm</Size>
                         <CellContents>
                           <Textbox Name="colonia">
                             <CanGrow>true</CanGrow>
@@ -338,7 +381,11 @@
                                 <TextRuns>
                                   <TextRun>
                                     <Value>=Fields!colonia.Value</Value>
-                                    <Style />
+                                    <Style>
+                                      <FontFamily>Tahoma</FontFamily>
+                                      <FontWeight>Bold</FontWeight>
+                                      <Color>#4c68a2</Color>
+                                    </Style>
                                   </TextRun>
                                 </TextRuns>
                                 <Style />
@@ -347,9 +394,10 @@
                             <rd:DefaultName>colonia</rd:DefaultName>
                             <Style>
                               <Border>
-                                <Color>LightGrey</Color>
+                                <Color>White</Color>
                                 <Style>Solid</Style>
                               </Border>
+                              <BackgroundColor>#e6eefc</BackgroundColor>
                               <PaddingLeft>2pt</PaddingLeft>
                               <PaddingRight>2pt</PaddingRight>
                               <PaddingTop>2pt</PaddingTop>
@@ -371,7 +419,7 @@
                             </SortExpression>
                           </SortExpressions>
                           <TablixHeader>
-                            <Size>3.302cm</Size>
+                            <Size>1.76742cm</Size>
                             <CellContents>
                               <Textbox Name="CP">
                                 <CanGrow>true</CanGrow>
@@ -381,7 +429,11 @@
                                     <TextRuns>
                                       <TextRun>
                                         <Value>=Fields!CP.Value</Value>
-                                        <Style />
+                                        <Style>
+                                          <FontFamily>Tahoma</FontFamily>
+                                          <FontWeight>Bold</FontWeight>
+                                          <Color>#4c68a2</Color>
+                                        </Style>
                                       </TextRun>
                                     </TextRuns>
                                     <Style />
@@ -390,9 +442,10 @@
                                 <rd:DefaultName>CP</rd:DefaultName>
                                 <Style>
                                   <Border>
-                                    <Color>LightGrey</Color>
+                                    <Color>White</Color>
                                     <Style>Solid</Style>
                                   </Border>
+                                  <BackgroundColor>#e6eefc</BackgroundColor>
                                   <PaddingLeft>2pt</PaddingLeft>
                                   <PaddingRight>2pt</PaddingRight>
                                   <PaddingTop>2pt</PaddingTop>
@@ -414,19 +467,50 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>ReporteCalles</DataSetName>
+        <Top>1.42875cm</Top>
         <Height>1.2cm</Height>
-        <Width>16.51cm</Width>
+        <Width>18.30917cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
+      <Textbox Name="Textbox11">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>REPORTE DE CALLES</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox11</rd:DefaultName>
+        <Top>0.23495cm</Top>
+        <Left>6.87599cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.90229cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>6.5in</Width>
+  <Width>8.125in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
@@ -444,7 +528,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>ec05eff5-21ac-4880-a094-84770eb624d8</rd:DataSourceID>
+      <rd:DataSourceID>852eff9b-7b69-4ea7-bfce-a939271c3655</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -478,13 +562,13 @@
       <rd:DataSetInfo>
         <rd:DataSetName>DataSetSistema</rd:DataSetName>
         <rd:SchemaPath>C:\SistemaAguaPotable\System\WaterSystem\Sistema\DataSetSistema.xsd</rd:SchemaPath>
-        <rd:TableName>Calles</rd:TableName>
+        <rd:TableName>REPORTECALLES</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>CallesTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>REPORTECALLESTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>76e1ba9a-345f-4156-942c-ca28e5abf963</rd:ReportID>
+  <rd:ReportID>7e3ecf78-3398-4a59-bee9-5d2326051bee</rd:ReportID>
 </Report>

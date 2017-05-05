@@ -59,6 +59,9 @@ Partial Class frmMain
         Me.tsmiReportesTarifas = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiReportesPozos = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiReportesMaterialPorExistencia = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiReportesCuentasPorCalle = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiReportesServicios = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiReportesProveedores = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuPrincipal.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -248,7 +251,7 @@ Partial Class frmMain
         '
         'tsmiReportes
         '
-        Me.tsmiReportes.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiReportesCuentas, Me.tsmiReportesCalles, Me.tsmiReportesEmpleados, Me.tsmiReportesGastos, Me.tsmiReportesTarifas, Me.tsmiReportesPozos, Me.tsmiReportesMaterialPorExistencia})
+        Me.tsmiReportes.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiReportesCuentas, Me.tsmiReportesCalles, Me.tsmiReportesEmpleados, Me.tsmiReportesGastos, Me.tsmiReportesTarifas, Me.tsmiReportesPozos, Me.tsmiReportesMaterialPorExistencia, Me.tsmiReportesCuentasPorCalle, Me.tsmiReportesServicios, Me.tsmiReportesProveedores})
         Me.tsmiReportes.Name = "tsmiReportes"
         Me.tsmiReportes.Size = New System.Drawing.Size(65, 20)
         Me.tsmiReportes.Text = "Reportes"
@@ -294,6 +297,24 @@ Partial Class frmMain
         Me.tsmiReportesMaterialPorExistencia.Name = "tsmiReportesMaterialPorExistencia"
         Me.tsmiReportesMaterialPorExistencia.Size = New System.Drawing.Size(192, 22)
         Me.tsmiReportesMaterialPorExistencia.Text = "Material por existencia"
+        '
+        'tsmiReportesCuentasPorCalle
+        '
+        Me.tsmiReportesCuentasPorCalle.Name = "tsmiReportesCuentasPorCalle"
+        Me.tsmiReportesCuentasPorCalle.Size = New System.Drawing.Size(192, 22)
+        Me.tsmiReportesCuentasPorCalle.Text = "Cuentas por calle"
+        '
+        'tsmiReportesServicios
+        '
+        Me.tsmiReportesServicios.Name = "tsmiReportesServicios"
+        Me.tsmiReportesServicios.Size = New System.Drawing.Size(192, 22)
+        Me.tsmiReportesServicios.Text = "Servicios"
+        '
+        'tsmiReportesProveedores
+        '
+        Me.tsmiReportesProveedores.Name = "tsmiReportesProveedores"
+        Me.tsmiReportesProveedores.Size = New System.Drawing.Size(192, 22)
+        Me.tsmiReportesProveedores.Text = "Proveedores"
         '
         'frmMain
         '
@@ -349,4 +370,7 @@ Partial Class frmMain
     Friend WithEvents tsmiReportesTarifas As ToolStripMenuItem
     Friend WithEvents tsmiReportesPozos As ToolStripMenuItem
     Friend WithEvents tsmiReportesMaterialPorExistencia As ToolStripMenuItem
+    Friend WithEvents tsmiReportesCuentasPorCalle As ToolStripMenuItem
+    Friend WithEvents tsmiReportesServicios As ToolStripMenuItem
+    Friend WithEvents tsmiReportesProveedores As ToolStripMenuItem
 End Class

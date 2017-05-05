@@ -6,7 +6,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>4.32563cm</Width>
+              <Width>7.34188cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -23,7 +23,12 @@
                           <TextRuns>
                             <TextRun>
                               <Value>ubicacion</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -32,9 +37,10 @@
                       <rd:DefaultName>Textbox2</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#7292cc</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>#4c68a2</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -58,7 +64,10 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!ubicacion.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <Color>#4d4d4d</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -67,7 +76,7 @@
                       <rd:DefaultName>ubicacion</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#e5e5e5</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -91,7 +100,7 @@
           <TablixMembers>
             <TablixMember>
               <TablixHeader>
-                <Size>4.32563cm</Size>
+                <Size>2.5cm</Size>
                 <CellContents>
                   <Textbox Name="Textbox3">
                     <CanGrow>true</CanGrow>
@@ -101,7 +110,12 @@
                         <TextRuns>
                           <TextRun>
                             <Value>id Pozo</Value>
-                            <Style />
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontSize>11pt</FontSize>
+                              <FontWeight>Bold</FontWeight>
+                              <Color>White</Color>
+                            </Style>
                           </TextRun>
                         </TextRuns>
                         <Style />
@@ -110,9 +124,10 @@
                     <rd:DefaultName>Textbox3</rd:DefaultName>
                     <Style>
                       <Border>
-                        <Color>LightGrey</Color>
+                        <Color>#7292cc</Color>
                         <Style>Solid</Style>
                       </Border>
+                      <BackgroundColor>#4c68a2</BackgroundColor>
                       <PaddingLeft>2pt</PaddingLeft>
                       <PaddingRight>2pt</PaddingRight>
                       <PaddingTop>2pt</PaddingTop>
@@ -138,7 +153,7 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>4.32563cm</Size>
+                <Size>2.5cm</Size>
                 <CellContents>
                   <Textbox Name="idPozo">
                     <CanGrow>true</CanGrow>
@@ -148,7 +163,11 @@
                         <TextRuns>
                           <TextRun>
                             <Value>=Fields!idPozo.Value</Value>
-                            <Style />
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontWeight>Bold</FontWeight>
+                              <Color>#465678</Color>
+                            </Style>
                           </TextRun>
                         </TextRuns>
                         <Style />
@@ -157,9 +176,10 @@
                     <rd:DefaultName>idPozo</rd:DefaultName>
                     <Style>
                       <Border>
-                        <Color>LightGrey</Color>
+                        <Color>#c6daf8</Color>
                         <Style>Solid</Style>
                       </Border>
+                      <BackgroundColor>#9eb6e4</BackgroundColor>
                       <PaddingLeft>2pt</PaddingLeft>
                       <PaddingRight>2pt</PaddingRight>
                       <PaddingTop>2pt</PaddingTop>
@@ -177,14 +197,46 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>ReportePozos</DataSetName>
+        <Top>1.79917cm</Top>
+        <Left>3.20146cm</Left>
         <Height>1.2cm</Height>
-        <Width>8.65125cm</Width>
+        <Width>9.84188cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
+      <Textbox Name="Textbox5">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>REPORTE DE POZOS</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox5</rd:DefaultName>
+        <Top>0.79057cm</Top>
+        <Left>4.44183cm</Left>
+        <Height>0.6cm</Height>
+        <Width>7.2625cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>2in</Height>
     <Style />
@@ -207,7 +259,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>b3d24e6b-526c-441d-a43a-5accb756d898</rd:DataSourceID>
+      <rd:DataSourceID>865dc3d8-2d8d-4c9f-8b96-162d37d5b61d</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -229,13 +281,13 @@
       <rd:DataSetInfo>
         <rd:DataSetName>DataSetSistema</rd:DataSetName>
         <rd:SchemaPath>C:\SistemaAguaPotable\System\WaterSystem\Sistema\DataSetSistema.xsd</rd:SchemaPath>
-        <rd:TableName>Pozos</rd:TableName>
+        <rd:TableName>REPORTEPOZOS</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>PozosTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>REPORTEPOZOSTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>ee71280f-9adb-4bd6-b478-4b843dbb604e</rd:ReportID>
+  <rd:ReportID>0bcc35b3-f36b-4020-b4be-efdcad9a19a4</rd:ReportID>
 </Report>
