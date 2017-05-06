@@ -229,6 +229,12 @@
     <Compile Include="Reportes\FormsParaParametros\frmParametroCuenta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\FormsParaParametros\frmParametrosHistorialPagoPorCuenta.Designer.vb">
+      <DependentUpon>frmParametrosHistorialPagoPorCuenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FormsParaParametros\frmParametrosHistorialPagoPorCuenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\frmReporte.Designer.vb">
       <DependentUpon>frmReporte.vb</DependentUpon>
     </Compile>
@@ -309,6 +315,9 @@
     <EmbeddedResource Include="Reportes\FormsParaParametros\frmParametroCuenta.resx">
       <DependentUpon>frmParametroCuenta.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FormsParaParametros\frmParametrosHistorialPagoPorCuenta.resx">
+      <DependentUpon>frmParametrosHistorialPagoPorCuenta.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmReporte.resx">
       <DependentUpon>frmReporte.vb</DependentUpon>
     </EmbeddedResource>
@@ -318,6 +327,7 @@
     <EmbeddedResource Include="Reportes\ReporteCuentasPorCalle.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteEmpleados.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteGastos.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteHistorialPagosCuentas.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteMaterialPorExistencia.rdlc" />
     <EmbeddedResource Include="Reportes\ReportePozos.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteProveedores.rdlc" />

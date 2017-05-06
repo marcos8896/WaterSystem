@@ -63,6 +63,7 @@ Partial Class frmMain
         Me.tsmiReportesServicios = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiReportesProveedores = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiReportesCuentasDeudoras = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiReportesHistorialDePagosPorCuenta = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuPrincipal.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -252,7 +253,7 @@ Partial Class frmMain
         '
         'tsmiReportes
         '
-        Me.tsmiReportes.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiReportesCuentas, Me.tsmiReportesCalles, Me.tsmiReportesEmpleados, Me.tsmiReportesGastos, Me.tsmiReportesTarifas, Me.tsmiReportesPozos, Me.tsmiReportesMaterialPorExistencia, Me.tsmiReportesCuentasPorCalle, Me.tsmiReportesServicios, Me.tsmiReportesProveedores, Me.tsmiReportesCuentasDeudoras})
+        Me.tsmiReportes.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiReportesCalles, Me.tsmiReportesCuentas, Me.tsmiReportesCuentasPorCalle, Me.tsmiReportesCuentasDeudoras, Me.tsmiReportesHistorialDePagosPorCuenta, Me.tsmiReportesMaterialPorExistencia, Me.tsmiReportesEmpleados, Me.tsmiReportesGastos, Me.tsmiReportesTarifas, Me.tsmiReportesPozos, Me.tsmiReportesServicios, Me.tsmiReportesProveedores})
         Me.tsmiReportes.Name = "tsmiReportes"
         Me.tsmiReportes.Size = New System.Drawing.Size(65, 20)
         Me.tsmiReportes.Text = "Reportes"
@@ -260,68 +261,74 @@ Partial Class frmMain
         'tsmiReportesCuentas
         '
         Me.tsmiReportesCuentas.Name = "tsmiReportesCuentas"
-        Me.tsmiReportesCuentas.Size = New System.Drawing.Size(194, 22)
+        Me.tsmiReportesCuentas.Size = New System.Drawing.Size(232, 22)
         Me.tsmiReportesCuentas.Text = "Cuentas"
         '
         'tsmiReportesCalles
         '
         Me.tsmiReportesCalles.Name = "tsmiReportesCalles"
-        Me.tsmiReportesCalles.Size = New System.Drawing.Size(194, 22)
+        Me.tsmiReportesCalles.Size = New System.Drawing.Size(232, 22)
         Me.tsmiReportesCalles.Text = "Calles"
         '
         'tsmiReportesEmpleados
         '
         Me.tsmiReportesEmpleados.Name = "tsmiReportesEmpleados"
-        Me.tsmiReportesEmpleados.Size = New System.Drawing.Size(194, 22)
+        Me.tsmiReportesEmpleados.Size = New System.Drawing.Size(232, 22)
         Me.tsmiReportesEmpleados.Text = "Empleados"
         '
         'tsmiReportesGastos
         '
         Me.tsmiReportesGastos.Name = "tsmiReportesGastos"
-        Me.tsmiReportesGastos.Size = New System.Drawing.Size(194, 22)
+        Me.tsmiReportesGastos.Size = New System.Drawing.Size(232, 22)
         Me.tsmiReportesGastos.Text = "Gastos"
         '
         'tsmiReportesTarifas
         '
         Me.tsmiReportesTarifas.Name = "tsmiReportesTarifas"
-        Me.tsmiReportesTarifas.Size = New System.Drawing.Size(194, 22)
+        Me.tsmiReportesTarifas.Size = New System.Drawing.Size(232, 22)
         Me.tsmiReportesTarifas.Text = "Tarifas"
         '
         'tsmiReportesPozos
         '
         Me.tsmiReportesPozos.Name = "tsmiReportesPozos"
-        Me.tsmiReportesPozos.Size = New System.Drawing.Size(194, 22)
+        Me.tsmiReportesPozos.Size = New System.Drawing.Size(232, 22)
         Me.tsmiReportesPozos.Text = "Pozos"
         '
         'tsmiReportesMaterialPorExistencia
         '
         Me.tsmiReportesMaterialPorExistencia.Name = "tsmiReportesMaterialPorExistencia"
-        Me.tsmiReportesMaterialPorExistencia.Size = New System.Drawing.Size(194, 22)
+        Me.tsmiReportesMaterialPorExistencia.Size = New System.Drawing.Size(232, 22)
         Me.tsmiReportesMaterialPorExistencia.Text = "Material con existencia"
         '
         'tsmiReportesCuentasPorCalle
         '
         Me.tsmiReportesCuentasPorCalle.Name = "tsmiReportesCuentasPorCalle"
-        Me.tsmiReportesCuentasPorCalle.Size = New System.Drawing.Size(194, 22)
+        Me.tsmiReportesCuentasPorCalle.Size = New System.Drawing.Size(232, 22)
         Me.tsmiReportesCuentasPorCalle.Text = "Cuentas por calle"
         '
         'tsmiReportesServicios
         '
         Me.tsmiReportesServicios.Name = "tsmiReportesServicios"
-        Me.tsmiReportesServicios.Size = New System.Drawing.Size(194, 22)
+        Me.tsmiReportesServicios.Size = New System.Drawing.Size(232, 22)
         Me.tsmiReportesServicios.Text = "Servicios"
         '
         'tsmiReportesProveedores
         '
         Me.tsmiReportesProveedores.Name = "tsmiReportesProveedores"
-        Me.tsmiReportesProveedores.Size = New System.Drawing.Size(194, 22)
+        Me.tsmiReportesProveedores.Size = New System.Drawing.Size(232, 22)
         Me.tsmiReportesProveedores.Text = "Proveedores"
         '
         'tsmiReportesCuentasDeudoras
         '
         Me.tsmiReportesCuentasDeudoras.Name = "tsmiReportesCuentasDeudoras"
-        Me.tsmiReportesCuentasDeudoras.Size = New System.Drawing.Size(194, 22)
+        Me.tsmiReportesCuentasDeudoras.Size = New System.Drawing.Size(232, 22)
         Me.tsmiReportesCuentasDeudoras.Text = "Cuentas deudoras"
+        '
+        'tsmiReportesHistorialDePagosPorCuenta
+        '
+        Me.tsmiReportesHistorialDePagosPorCuenta.Name = "tsmiReportesHistorialDePagosPorCuenta"
+        Me.tsmiReportesHistorialDePagosPorCuenta.Size = New System.Drawing.Size(229, 22)
+        Me.tsmiReportesHistorialDePagosPorCuenta.Text = "Historial de pagos por cuenta"
         '
         'frmMain
         '
@@ -381,4 +388,5 @@ Partial Class frmMain
     Friend WithEvents tsmiReportesServicios As ToolStripMenuItem
     Friend WithEvents tsmiReportesProveedores As ToolStripMenuItem
     Friend WithEvents tsmiReportesCuentasDeudoras As ToolStripMenuItem
+    Friend WithEvents tsmiReportesHistorialDePagosPorCuenta As ToolStripMenuItem
 End Class

@@ -275,4 +275,8 @@ Public Class frmMain
         frmReporte.Show()
         CONEXION.Close()
     End Sub
+
+    Private Sub tsmiReportesHistorialDePagosPorCuenta_Click(sender As Object, e As EventArgs) Handles tsmiReportesHistorialDePagosPorCuenta.Click
+        frmParametrosHistorialPagoPorCuenta.ShowDialog()
+    End Sub
 End Class
