@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System.IO
 Imports Microsoft.Reporting.WinForms
 
 
@@ -278,5 +279,18 @@ Public Class frmMain
 
     Private Sub tsmiReportesHistorialDePagosPorCuenta_Click(sender As Object, e As EventArgs) Handles tsmiReportesHistorialDePagosPorCuenta.Click
         frmParametrosHistorialPagoPorCuenta.ShowDialog()
+    End Sub
+
+    Private Sub tsmiReportesPorPeriodo_Click(sender As Object, e As EventArgs) Handles tsmiReportesPorPeriodo.Click
+        frmParametrosPorPeriodo.ShowDialog()
+    End Sub
+
+    Private Sub PruebaPathToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PruebaPathToolStripMenuItem.Click
+        'Dim reportsFolder = Replace(Application.StartupPath, "bin\debug", "\Reportes\")
+        'Dim staticPath As String = "C:\SistemaAguaPotable\System\WaterSystem\Sistema\Reportes\ReporteCuentasDeudoras.rdlc"
+
+        'MessageBox.Show(reportsFolder, "DinamicPath")
+        'MessageBox.Show(staticPath, "StaticPath")
+
     End Sub
 End Class

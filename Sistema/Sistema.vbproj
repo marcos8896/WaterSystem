@@ -229,6 +229,12 @@
     <Compile Include="Reportes\FormsParaParametros\frmParametroCuenta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\FormsParaParametros\frmParametrosPorPeriodo.Designer.vb">
+      <DependentUpon>frmParametrosPorPeriodo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FormsParaParametros\frmParametrosPorPeriodo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\FormsParaParametros\frmParametrosHistorialPagoPorCuenta.Designer.vb">
       <DependentUpon>frmParametrosHistorialPagoPorCuenta.vb</DependentUpon>
     </Compile>
@@ -315,6 +321,9 @@
     <EmbeddedResource Include="Reportes\FormsParaParametros\frmParametroCuenta.resx">
       <DependentUpon>frmParametroCuenta.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FormsParaParametros\frmParametrosPorPeriodo.resx">
+      <DependentUpon>frmParametrosPorPeriodo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FormsParaParametros\frmParametrosHistorialPagoPorCuenta.resx">
       <DependentUpon>frmParametrosHistorialPagoPorCuenta.vb</DependentUpon>
     </EmbeddedResource>
@@ -326,11 +335,13 @@
     <EmbeddedResource Include="Reportes\ReporteCuentasDeudoras.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteCuentasPorCalle.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteEmpleados.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteEntradaMaterialPorPeriodo.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteGastos.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteHistorialPagosCuentas.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteMaterialPorExistencia.rdlc" />
     <EmbeddedResource Include="Reportes\ReportePozos.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteProveedores.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteSalidaMaterialPorPeriodo.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteServicios.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteTarifas.rdlc" />
   </ItemGroup>

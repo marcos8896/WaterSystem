@@ -39,7 +39,8 @@ Partial Class frmReporte
         Me.ClientSize = New System.Drawing.Size(807, 365)
         Me.Controls.Add(Me.reportViewer)
         Me.Name = "frmReporte"
-        Me.Text = "Reporte"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.Text = "Reportes"
         Me.ResumeLayout(False)
 
     End Sub
