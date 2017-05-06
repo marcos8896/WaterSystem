@@ -71,7 +71,7 @@ Public Class frmParametroCuenta
             "C:\SistemaAguaPotable\System\WaterSystem\Sistema\Reportes\ReporteCuentasPorCalle.rdlc"
             frmReporte.reportViewer.LocalReport.SetParameters(New ReportParameter() {p1})
             frmReporte.reportViewer.RefreshReport()
-            frmReporte.Show()
+            frmReporte.ShowDialog()
             CONEXION.Close()
         End If
     End Sub

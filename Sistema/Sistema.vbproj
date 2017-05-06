@@ -330,6 +330,7 @@
     <EmbeddedResource Include="Reportes\frmReporte.resx">
       <DependentUpon>frmReporte.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteActividadPozosPorPeriodo.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteCalles.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteCuentas.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteCuentasDeudoras.rdlc" />

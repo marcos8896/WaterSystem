@@ -75,7 +75,7 @@ Public Class frmParametrosHistorialPagoPorCuenta
             "C:\SistemaAguaPotable\System\WaterSystem\Sistema\Reportes\ReporteHistorialPagosCuentas.rdlc"
             frmReporte.reportViewer.LocalReport.SetParameters(New ReportParameter() {p1})
             frmReporte.reportViewer.RefreshReport()
-            frmReporte.Show()
+            frmReporte.ShowDialog()
             CONEXION.Close()
         End If
     End Sub

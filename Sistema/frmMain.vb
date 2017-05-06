@@ -107,7 +107,7 @@ Public Class frmMain
         frmReporte.reportViewer.LocalReport.ReportPath =
         "C:\SistemaAguaPotable\System\WaterSystem\Sistema\Reportes\ReporteCuentas.rdlc"
         frmReporte.reportViewer.RefreshReport()
-        frmReporte.Show()
+        frmReporte.ShowDialog()
         CONEXION.Close()
     End Sub
 
@@ -125,7 +125,7 @@ Public Class frmMain
         frmReporte.reportViewer.LocalReport.ReportPath =
         "C:\SistemaAguaPotable\System\WaterSystem\Sistema\Reportes\ReporteCalles.rdlc"
         frmReporte.reportViewer.RefreshReport()
-        frmReporte.Show()
+        frmReporte.ShowDialog()
         CONEXION.Close()
     End Sub
 
@@ -161,7 +161,7 @@ Public Class frmMain
         frmReporte.reportViewer.LocalReport.ReportPath =
         "C:\SistemaAguaPotable\System\WaterSystem\Sistema\Reportes\ReporteGastos.rdlc"
         frmReporte.reportViewer.RefreshReport()
-        frmReporte.Show()
+        frmReporte.ShowDialog()
         CONEXION.Close()
     End Sub
 
@@ -179,7 +179,7 @@ Public Class frmMain
         frmReporte.reportViewer.LocalReport.ReportPath =
         "C:\SistemaAguaPotable\System\WaterSystem\Sistema\Reportes\ReporteTarifas.rdlc"
         frmReporte.reportViewer.RefreshReport()
-        frmReporte.Show()
+        frmReporte.ShowDialog()
         CONEXION.Close()
     End Sub
 
@@ -197,7 +197,7 @@ Public Class frmMain
         frmReporte.reportViewer.LocalReport.ReportPath =
         "C:\SistemaAguaPotable\System\WaterSystem\Sistema\Reportes\ReportePozos.rdlc"
         frmReporte.reportViewer.RefreshReport()
-        frmReporte.Show()
+        frmReporte.ShowDialog()
         CONEXION.Close()
     End Sub
 
@@ -215,7 +215,7 @@ Public Class frmMain
         frmReporte.reportViewer.LocalReport.ReportPath =
         "C:\SistemaAguaPotable\System\WaterSystem\Sistema\Reportes\ReporteMaterialPorExistencia.rdlc"
         frmReporte.reportViewer.RefreshReport()
-        frmReporte.Show()
+        frmReporte.ShowDialog()
         CONEXION.Close()
     End Sub
 
@@ -237,7 +237,7 @@ Public Class frmMain
         frmReporte.reportViewer.LocalReport.ReportPath =
         "C:\SistemaAguaPotable\System\WaterSystem\Sistema\Reportes\ReporteServicios.rdlc"
         frmReporte.reportViewer.RefreshReport()
-        frmReporte.Show()
+        frmReporte.ShowDialog()
         CONEXION.Close()
     End Sub
 
@@ -255,7 +255,7 @@ Public Class frmMain
         frmReporte.reportViewer.LocalReport.ReportPath =
         "C:\SistemaAguaPotable\System\WaterSystem\Sistema\Reportes\ReporteProveedores.rdlc"
         frmReporte.reportViewer.RefreshReport()
-        frmReporte.Show()
+        frmReporte.ShowDialog()
         CONEXION.Close()
     End Sub
 
@@ -273,7 +273,7 @@ Public Class frmMain
         frmReporte.reportViewer.LocalReport.ReportPath =
         "C:\SistemaAguaPotable\System\WaterSystem\Sistema\Reportes\ReporteCuentasDeudoras.rdlc"
         frmReporte.reportViewer.RefreshReport()
-        frmReporte.Show()
+        frmReporte.ShowDialog()
         CONEXION.Close()
     End Sub
 
@@ -285,12 +285,12 @@ Public Class frmMain
         frmParametrosPorPeriodo.ShowDialog()
     End Sub
 
-    Private Sub PruebaPathToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PruebaPathToolStripMenuItem.Click
-        'Dim reportsFolder = Replace(Application.StartupPath, "bin\debug", "\Reportes\")
-        'Dim staticPath As String = "C:\SistemaAguaPotable\System\WaterSystem\Sistema\Reportes\ReporteCuentasDeudoras.rdlc"
+    'Private Sub PruebaPathToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PruebaPathToolStripMenuItem.Click
+    'Dim reportsFolder = Replace(Application.StartupPath, "bin\debug", "\Reportes\")
+    'Dim staticPath As String = "C:\SistemaAguaPotable\System\WaterSystem\Sistema\Reportes\ReporteCuentasDeudoras.rdlc"
 
-        'MessageBox.Show(reportsFolder, "DinamicPath")
-        'MessageBox.Show(staticPath, "StaticPath")
+    'MessageBox.Show(reportsFolder, "DinamicPath")
+    'MessageBox.Show(staticPath, "StaticPath")
 
-    End Sub
+    'End Sub
 End Class
