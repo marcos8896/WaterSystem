@@ -337,8 +337,10 @@
     <EmbeddedResource Include="Reportes\ReporteEmpleados.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteEntradaMaterialPorPeriodo.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteGastos.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteGastosPorPeriodo.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteHistorialPagosCuentas.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteMaterialPorExistencia.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportePagosPorPeriodo.rdlc" />
     <EmbeddedResource Include="Reportes\ReportePozos.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteProveedores.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteSalidaMaterialPorPeriodo.rdlc" />
